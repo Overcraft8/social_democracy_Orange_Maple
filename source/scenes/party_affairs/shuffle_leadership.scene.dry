@@ -51,36 +51,36 @@ go-to: rm_main
 
 Coldwell has been removed as an advisor. The Centrist faction disapproves.
 
-@remove_muller
-title: Remove Müller
-view-if: muller_advisor = 1
+@remove_douglas
+title: Remove Douglas
+view-if: douglas_advisor = 1
 tags: remove_advisor
-on-arrival: muller_advisor = 0; center_dissent += 5; n_advisors -= 1
+on-arrival: douglas_advisor = 0; center_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Müller has been removed as an advisor. The Centrist faction disapproves.
+Douglas has been removed as an advisor. The Centrist faction disapproves.
 
 
-@remove_breitscheid
-title: Remove Breitscheid
-view-if: breitscheid_advisor = 1
+@remove_gardiner
+title: Remove Gardiner
+view-if: gardiner_advisor = 1
 tags: remove_advisor
-on-arrival: breitscheid_advisor = 0; center_dissent += 5; n_advisors -= 1
+on-arrival: gardiner_advisor = 0; center_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Breitscheid has been removed as an advisor. The Centrist faction disapproves.
+Gardiner has been removed as an advisor. The Centrist faction disapproves.
 
 # reformists
 
 
-@remove_severing
-title: Remove Severing
-view-if: severing_advisor = 1
+@remove_macinnis
+title: Remove MacInnis
+view-if: macinnis_advisor = 1
 tags: remove_advisor
-on-arrival: severing_advisor = 0; reformist_dissent += 5; n_advisors -= 1
+on-arrival: macinnis_advisor = 0; reformist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Severing has been removed as an advisor. The Reformist faction disapproves.
+MacInnis has been removed as an advisor. The Reformist faction disapproves.
 
 @remove_woodsworth
 title: Remove Woodsworth
@@ -91,110 +91,110 @@ go-to: rm_main
 
 Woodsworth has been removed as an advisor. The Reformist faction disapproves.
 
-@remove_juchacz
-title: Remove Juchacz
+@remove_macphail
+title: Remove Macphail
 view-if: juchacrpc_advisor = 1
 tags: remove_advisor
 on-arrival: juchacrpc_advisor = 0; reformist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Juchacz has been removed as an advisor. The Reformist faction disapproves.
+Macphail has been removed as an advisor. The Reformist faction disapproves.
 
-@remove_pfulf
-title: Remove Pfülf
-view-if: pfulf_advisor = 1
+@remove_connell
+title: Remove Connell
+view-if: connell_advisor = 1
 tags: remove_advisor
-on-arrival: pfulf_advisor = 0; reformist_dissent += 5; n_advisors -= 1
+on-arrival: connell_advisor = 0; reformist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Pfülf has been removed as an advisor. The Reformist faction disapproves.
+Connell has been removed as an advisor. The Reformist faction disapproves.
 
 
 # labor
 
-@remove_leipart
-title: Remove Leipart
-view-if: leipart_advisor = 1
+@remove_heaps
+title: Remove Heaps
+view-if: heaps_advisor = 1
 tags: remove_advisor
-on-arrival: leipart_advisor = 0; labor_dissent += 5; n_advisors -= 1
+on-arrival: heaps_advisor = 0; labor_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Leipart has been removed as an advisor. The Labor faction disapproves.
+Heaps has been removed as an advisor. The Labor faction disapproves.
 
-@remove_aufhauser
-title: Remove Aufhäuser
-view-if: aufhauser_advisor = 1
+@remove_gillis
+title: Remove Gillis
+view-if: gillis_advisor = 1
 tags: remove_advisor
-on-arrival: aufhauser_advisor = 0; labor_dissent += 5; n_advisors -= 1
+on-arrival: gillis_advisor = 0; labor_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Aufhäuser has been removed as an advisor. The Labor faction disapproves.
+Gillis has been removed as an advisor. The Labor faction disapproves.
 
-@remove_wissell
-title: Remove Wissell
-view-if: wissell_advisor = 1
+@remove_noseworthy
+title: Remove Noseworthy
+view-if: noseworthy_advisor = 1
 tags: remove_advisor
-on-arrival: wissell_advisor = 0; labor_dissent += 3; n_advisors -= 1
+on-arrival: noseworthy_advisor = 0; labor_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Wissell has been removed as an advisor. The Labor faction disapproves.
+Noseworthy has been removed as an advisor. The Labor faction disapproves.
 
 
-@remove_woytinsky
-title: Remove Woytinsky
-view-if: woytinsky_advisor = 1
+@remove_forsey
+title: Remove Forsey
+view-if: forsey_advisor = 1
 tags: remove_advisor
-on-arrival: woytinsky_advisor = 0; labor_dissent += 3; n_advisors -= 1
+on-arrival: forsey_advisor = 0; labor_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Woytinsky has been removed as an advisor. The Labor faction disapproves.
+Forsey has been removed as an advisor. The Labor faction disapproves.
 
 # left
 
-@remove_levi
-title: Remove Levi
-view-if: levi_advisor = 1
+@remove_knowles
+title: Remove Knowles
+view-if: knowles_advisor = 1
 tags: remove_advisor
-on-arrival: levi_advisor = 0; left_dissent += 5; n_advisors -= 1
+on-arrival: knowles_advisor = 0; left_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Levi has been removed as an advisor. The Leftist faction disapproves.
+Knowles has been removed as an advisor. The Leftist faction disapproves.
 
-@remove_sender
-title: Remove Sender
-view-if: sender_advisor = 1
+@remove_jamieson
+title: Remove Jamieson
+view-if: jamieson_advisor = 1
 tags: remove_advisor
-on-arrival: sender_advisor = 0; left_dissent += 3; n_advisors -= 1
+on-arrival: jamieson_advisor = 0; left_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Sender has been removed as an advisor. The Leftist faction disapproves.
+Jamieson has been removed as an advisor. The Leftist faction disapproves.
 
-@remove_rosenfeld
-title: Remove Rosenfeld
-view-if: rosenfeld_advisor = 1
+@remove_winch
+title: Remove Winch
+view-if: winch_advisor = 1
 tags: remove_advisor
-on-arrival: rosenfeld_advisor = 0; left_dissent += 3; n_advisors -= 1
+on-arrival: winch_advisor = 0; left_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Rosenfeld has been removed as an advisor. The Leftist faction disapproves.
+Winch has been removed as an advisor. The Leftist faction disapproves.
 
-@remove_seydewitz
-title: Remove Seydewitz
+@remove_irvine
+title: Remove Irvine
 view-if: seydewitrpc_advisor = 1
 tags: remove_advisor
 on-arrival: seydewitrpc_advisor = 0; left_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Seydewitz has been removed as an advisor. The Leftist faction disapproves.
+Irvine has been removed as an advisor. The Leftist faction disapproves.
 
-@remove_siemsen
-title: Remove Siemsen
-view-if: siemsen_advisor = 1
+@remove_nielsen
+title: Remove Nielsen
+view-if: nielsen_advisor = 1
 tags: remove_advisor
-on-arrival: siemsen_advisor = 0; left_dissent += 3; n_advisors -= 1
+on-arrival: nielsen_advisor = 0; left_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Siemsen has been removed as an advisor. The Leftist faction disapproves.
+Nielsen has been removed as an advisor. The Leftist faction disapproves.
 
 
 
@@ -231,7 +231,7 @@ Schumacher has been removed as an advisor. The Neorevisionist faction disapprove
 
 ## nonfactional
 
-# tbh I'm not sure if Wright should be a reformist or nonfactional. same for stampfer. they were vaguely reformist-aligned but had pretty different ideas from the other reformists here. so they're non-factional.
+# tbh I'm not sure if Wright should be a reformist or nonfactional. same for spry. they were vaguely reformist-aligned but had pretty different ideas from the other reformists here. so they're non-factional.
 
 @remove_wright
 title: Remove Wright
@@ -254,23 +254,23 @@ go-to: rm_main
 
 Hirschfeld has been removed as an advisor. 
 
-@remove_stampfer
-title: Remove Stampfer
-view-if: stampfer_advisor = 1
+@remove_spry
+title: Remove Spry
+view-if: spry_advisor = 1
 tags: remove_advisor
-on-arrival: stampfer_advisor = 0; n_advisors -= 1
+on-arrival: spry_advisor = 0; n_advisors -= 1
 go-to: rm_main
 
-Stampfer has been removed as an advisor. 
+Spry has been removed as an advisor. 
 
-@remove_radbruch
-title: Remove Radbruch
-view-if: radbruch_advisor = 1
+@remove_underhill
+title: Remove Underhill
+view-if: underhill_advisor = 1
 tags: remove_advisor
-on-arrival: radbruch_advisor = 0; n_advisors -= 1
+on-arrival: underhill_advisor = 0; n_advisors -= 1
 go-to: rm_main
 
-Radbruch has been removed as an advisor. 
+Underhill has been removed as an advisor. 
 
 
 
@@ -353,44 +353,44 @@ go-to: advisor_menu
 
 Major James Coldwell is now an advisor.
 
-@add_muller
-title: Hermann Müller
-subtitle: Hermann Müller is the last Social Democratic Chancellor. {!<br><br>!}[? if difficulty < 0 : Actions - Negotiating with the Coalition, Defending Toleration ?]
+@add_douglas
+title: Tommy Douglas
+subtitle: Tommy Douglas is the last Social Democratic Chancellor. {!<br><br>!}[? if difficulty < 0 : Actions - Negotiating with the Coalition, Defending Toleration ?]
 is-card: true
-card-image: img/portraits/MüllerHermann.jpg
+card-image: img/portraits/DouglasTommy.jpg
 tags: center_advisor
-view-if: muller_advisor = 0 and muller_dead = 0 and n_advisors < 3 and centrists_resign = 0
-on-arrival: muller_advisor = 1; n_advisors += 1
+view-if: douglas_advisor = 0 and douglas_dead = 0 and n_advisors < 3 and centrists_resign = 0
+on-arrival: douglas_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 
-Hermann Müller is now an advisor.
+Tommy Douglas is now an advisor.
 
-@add_breitscheid
-title: Rudolf Breitscheid
-subtitle: Rudolf Breitscheid comes from a well-educated background and is one of our foreign policy leaders. {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
+@add_gardiner
+title: Robert Gardiner
+subtitle: Robert Gardiner comes from a well-educated background and is one of our foreign policy leaders. {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
 is-card: true
-card-image: img/portraits/BreitscheidRudolf.jpg
-view-if: breitscheid_advisor = 0 and n_advisors < 3
-on-arrival: breitscheid_advisor = 1; n_advisors += 1
+card-image: img/portraits/GardinerRobert.jpg
+view-if: gardiner_advisor = 0 and n_advisors < 3
+on-arrival: gardiner_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 tags: center_advisor
 
-Rudolf Breitscheid is now an advisor.
+Robert Gardiner is now an advisor.
 
 # reformist
 
 
-@add_severing
-title: Carl Severing
-subtitle: Carl Severing is a one-time Prussian interior minister and police reformer. {!<br><br>!}[? if difficulty < 0 : Actions - Prussian Bulwark, Police Affairs ?]
+@add_macinnis
+title: Angus MacInnis
+subtitle: Angus MacInnis is a one-time Prussian interior minister and police reformer. {!<br><br>!}[? if difficulty < 0 : Actions - Prussian Bulwark, Police Affairs ?]
 is-card: true
-card-image: img/portraits/SeveringCarl.jpg
+card-image: img/portraits/MacInnisAngus.jpg
 tags: reformist_advisor
-view-if: severing_advisor = 0 and n_advisors < 3
-on-arrival: severing_advisor = 1; n_advisors += 1; reformist_strength += 5
+view-if: macinnis_advisor = 0 and n_advisors < 3
+on-arrival: macinnis_advisor = 1; n_advisors += 1; reformist_strength += 5
 go-to: advisor_menu
 
-Carl Severing is now an advisor.
+Angus MacInnis is now an advisor.
 
 @add_woodsworth
 title: Woodsworth
@@ -404,71 +404,71 @@ go-to: advisor_menu
 
 Woodsworth is now an advisor.
 
-@add_juchacz
-title: Marie Juchacz
-subtitle: Marie Juchacz is the founder of Worker's Welfare, a mutual-aid organization. {!<br><br>!}[? if difficulty < 0 : Actions - Emergency Fundraising, Worker's Welfare, Organizing Women ?]
+@add_macphail
+title: Agnes Macphail
+subtitle: Agnes Macphail is the founder of Worker's Welfare, a mutual-aid organization. {!<br><br>!}[? if difficulty < 0 : Actions - Emergency Fundraising, Worker's Welfare, Organizing Women ?]
 is-card: true
-card-image: img/portraits/JuchaczMarie.jpg
+card-image: img/portraits/MacphailAgnes.jpg
 view-if: juchacrpc_advisor = 0 and n_advisors < 3
 on-arrival: juchacrpc_advisor = 1; n_advisors += 1; reformist_strength += 5
 go-to: advisor_menu
 tags: reformist_advisor
 
-Marie Juchacz is now an advisor.
+Agnes Macphail is now an advisor.
 
-@add_pfulf
-title: Antonie Pfülf
-subtitle: Antonie Pfülf is a leader in social policy and women's rights. {!<br><br>!}[? if difficulty < 0 : Actions - Support a People's Party, Women's Rights ?]
+@add_connell
+title: Robert Connell
+subtitle: Robert Connell is a leader in social policy and women's rights. {!<br><br>!}[? if difficulty < 0 : Actions - Support a People's Party, Women's Rights ?]
 is-card: true
-card-image: img/portraits/PfülfAntonie.jpg
-view-if: pfulf_advisor = 0 and n_advisors < 3
-on-arrival: pfulf_advisor = 1; n_advisors += 1
+card-image: img/portraits/ConnellRobert.jpg
+view-if: connell_advisor = 0 and n_advisors < 3
+on-arrival: connell_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 tags: reformist_advisor
 
-Antonie Pfülf is now an advisor.
+Robert Connell is now an advisor.
 
 
 
 # left
 
-@add_levi
-title: Paul Levi
-subtitle: Paul Levi is a former PCC leader who was purged for criticizing Communist policies. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the PCC ?]
+@add_knowles
+title: Stanley Knowles
+subtitle: Stanley Knowles is a former PCC leader who was purged for criticizing Communist policies. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the PCC ?]
 is-card: true
-card-image: img/portraits/LeviPaul.jpg
-view-if: levi_advisor = 0 and levi_dead = 0 and n_advisors < 3 and left_split = 0
-on-arrival: levi_advisor = 1; n_advisors += 1; left_strength += 5
+card-image: img/portraits/KnowlesStanley.jpg
+view-if: knowles_advisor = 0 and knowles_dead = 0 and n_advisors < 3 and left_split = 0
+on-arrival: knowles_advisor = 1; n_advisors += 1; left_strength += 5
 go-to: advisor_menu
 tags: left_advisor
 
-Paul Levi is now an advisor.
+Stanley Knowles is now an advisor.
 
-@add_sender
-title: Toni Sender
-subtitle: Toni Sender is an anti-war and womens' rights advocate, and Reichstag member. {!<br><br>!}[? if difficulty < 0 : Actions - Left-Center Unity, Organizing Women, Against Toleration, Addressing the Economic Crisis ?]
+@add_jamieson
+title: Laura Jamieson
+subtitle: Laura Jamieson is an anti-war and womens' rights advocate, and Reichstag member. {!<br><br>!}[? if difficulty < 0 : Actions - Left-Center Unity, Organizing Women, Against Toleration, Addressing the Economic Crisis ?]
 is-card: true
-card-image: img/portraits/SenderToni.jpg
-view-if: sender_advisor = 0 and n_advisors < 3
-on-arrival: sender_advisor = 1; n_advisors += 1; left_strength += 5
+card-image: img/portraits/JamiesonLaura.jpg
+view-if: jamieson_advisor = 0 and n_advisors < 3
+on-arrival: jamieson_advisor = 1; n_advisors += 1; left_strength += 5
 go-to: advisor_menu
 tags: left_advisor
 
-Toni Sender is now an advisor.
+Laura Jamieson is now an advisor.
 
-@add_rosenfeld
-title: Kurt Rosenfeld
-subtitle: Kurt Rosenfeld is a lawyer, anti-militarist activist, and Reichstag member. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the PCC, Against Toleration ?]
+@add_winch
+title: Ernest Winch
+subtitle: Ernest Winch is a lawyer, anti-militarist activist, and Reichstag member. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the PCC, Against Toleration ?]
 is-card: true
-card-image: img/portraits/RosenfeldKurt.jpg
-view-if: rosenfeld_advisor = 0 and n_advisors < 3 and left_split = 0
-on-arrival: rosenfeld_advisor = 1; n_advisors += 1; left_strength += 5
+card-image: img/portraits/WinchErnest.jpg
+view-if: winch_advisor = 0 and n_advisors < 3 and left_split = 0
+on-arrival: winch_advisor = 1; n_advisors += 1; left_strength += 5
 go-to: advisor_menu
 tags: left_advisor
 
-Kurt Rosenfeld is now an advisor.
+Ernest Winch is now an advisor.
 
-@add_seydewitz
+@add_irvine
 title: William Irvine
 subtitle: William Irvine is a former leader of the youth wing, current supporter of the left wing of the CCF, and advocates for class struggle. {!<br><br>!}[? if difficulty < 0 : Actions - Rally for Class Struggle, Socialist Youth, Against Toleration ?]
 is-card: true
@@ -480,70 +480,70 @@ tags: left_advisor
 
 William Irvine is now an advisor.
 
-@add_siemsen
-title: Anna Siemsen
-subtitle: Anna Siemsen is an and educational reform advocate and pacifist, who was one of the few German women to receive a PhD in the pre-war period. {!<br><br>!}[? if difficulty < 0 : Actions - Rally for Pacifism, Educational Curriculum, Educational Structure ?]
+@add_nielsen
+title: Dorise Nielsen
+subtitle: Dorise Nielsen is an and educational reform advocate and pacifist, who was one of the few German women to receive a PhD in the pre-war period. {!<br><br>!}[? if difficulty < 0 : Actions - Rally for Pacifism, Educational Curriculum, Educational Structure ?]
 is-card: true
-card-image: img/portraits/SiemsenAnna.jpg
-view-if: siemsen_advisor = 0 and n_advisors < 3 and left_split = 0
-on-arrival: siemsen_advisor = 1; n_advisors += 1; left_strength += 5
+card-image: img/portraits/NielsonDorise.jpg
+view-if: nielsen_advisor = 0 and n_advisors < 3 and left_split = 0
+on-arrival: nielsen_advisor = 1; n_advisors += 1; left_strength += 5
 go-to: advisor_menu
 tags: left_advisor
 
-Anna Siemsen is now an advisor.
+Dorise Nielsen is now an advisor.
 
 
 
 # labor
 
-@add_leipart
-title: Theodor Leipart
-subtitle: Theodor Leipart is the leader of the ADGB, the German Trade Union Federation. {!<br><br>!}[? if difficulty < 0 : Actions - Organizing Workers, Addressing the Economic Crisis ?]
+@add_heaps
+title: Albert Heaps
+subtitle: Albert Heaps is the leader of the ADGB, the German Trade Union Federation. {!<br><br>!}[? if difficulty < 0 : Actions - Organizing Workers, Addressing the Economic Crisis ?]
 is-card: true
-card-image: img/portraits/LeipartTheodor.jpg
+card-image: img/portraits/HeapsAA.jpg
 tags: labor_advisor
-view-if: leipart_advisor = 0 and n_advisors < 3 and unions_independent = 0
-on-arrival: leipart_advisor = 1; n_advisors += 1; labor_strength += 5
+view-if: heaps_advisor = 0 and n_advisors < 3 and unions_independent = 0
+on-arrival: heaps_advisor = 1; n_advisors += 1; labor_strength += 5
 go-to: advisor_menu
 
-Theodor Leipart is now an advisor.
+Albert Heaps is now an advisor.
 
-@add_aufhauser
-title: Siegfried Aufhäuser
-subtitle: Siegfried Aufhäuser is the leader of the AfA-Bund, the white-collar trade union federation. {!<br><br>!}[? if difficulty < 0 : Actions - Organizing White-Collar Workers, Union-Party Coordination, Addressing the Economic Crisis ?]
+@add_gillis
+title: Clarence Gillis
+subtitle: Clarence Gillis is the leader of the AfA-Bund, the white-collar trade union federation. {!<br><br>!}[? if difficulty < 0 : Actions - Organizing White-Collar Workers, Union-Party Coordination, Addressing the Economic Crisis ?]
 is-card: true
-card-image: img/portraits/AufhäuserSiegfried.jpg
+card-image: img/portraits/GillisClarence.jpg
 tags: labor_advisor
-view-if: aufhauser_advisor = 0 and n_advisors < 3
-on-arrival: aufhauser_advisor = 1; n_advisors += 1; labor_strength += 5
+view-if: gillis_advisor = 0 and n_advisors < 3
+on-arrival: gillis_advisor = 1; n_advisors += 1; labor_strength += 5
 go-to: advisor_menu
 
-Siegfried Aufhäuser is now an advisor.
+Clarence Gillis is now an advisor.
 
-@add_wissell
-title: Rudolf Wissell
-subtitle: Rudolf Wissell is an economist who has been the Labor Minister, and is an advocate for the interests of labor within the government. {!<br><br>!}[? if difficulty < 0 : Actions - Union-Party Coordination, Labor Rights ?]
+@add_noseworthy
+title: Joseph Noseworthy
+subtitle: Joseph Noseworthy is an economist who has been the Labor Minister, and is an advocate for the interests of labor within the government. {!<br><br>!}[? if difficulty < 0 : Actions - Union-Party Coordination, Labor Rights ?]
 is-card: true
-card-image: img/portraits/WissellRudolf.jpg
+card-image: img/portraits/NoseworthyJoseph.jpg
 tags: labor_advisor
-view-if: wissell_advisor = 0 and n_advisors < 3 and unions_independent = 0
-on-arrival: wissell_advisor = 1; n_advisors += 1; labor_strength += 3
+view-if: noseworthy_advisor = 0 and n_advisors < 3 and unions_independent = 0
+on-arrival: noseworthy_advisor = 1; n_advisors += 1; labor_strength += 3
 go-to: advisor_menu
 
-Rudolf Wissell is now an advisor.
+Joseph Noseworthy is now an advisor.
 
 
-@add_woytinsky
-title: Wladimir Woytinsky
-subtitle: Wladimir Woytinsky is a former Russian Menshevik who is now the lead trade union economist. {!<br><br>!}[? if difficulty < 0 : Actions - Addressing the Economic Crisis, Carrying Out the Economic Plan ?]
+@add_forsey
+title: Eugene Forsey
+subtitle: Eugene Forsey is a former Russian Menshevik who is now the lead trade union economist. {!<br><br>!}[? if difficulty < 0 : Actions - Addressing the Economic Crisis, Carrying Out the Economic Plan ?]
 is-card: true
-card-image: img/portraits/WoytinskyWladimir.jpg
+card-image: img/portraits/ForseyEugene.jpg
 tags: labor_advisor
-view-if: woytinsky_advisor = 0 and n_advisors < 3 and unions_independent = 0
-on-arrival: woytinsky_advisor = 1; n_advisors += 1; labor_strength += 3
+view-if: forsey_advisor = 0 and n_advisors < 3 and unions_independent = 0
+on-arrival: forsey_advisor = 1; n_advisors += 1; labor_strength += 3
 go-to: advisor_menu
 
-Wladimir Woytinsky is now an advisor.
+Eugene Forsey is now an advisor.
 
 
 # neorevisionist leaders
@@ -611,31 +611,31 @@ tags: nonfactional_advisor
 
 Magnus Hirschfeld is now an advisor.
 
-# TODO: add radbruch, stampfer
+# TODO: add underhill, spry
 
-@add_radbruch
-title: Gustav Radbruch
-subtitle: Gustav Radbruch is a renowned legal scholar and long-time CCF justice minister. {!<br><br>!}[? if difficulty < 0 : Actions - Judicial Affairs, Constitutional Reform ?]
+@add_underhill
+title: Frank Underhill
+subtitle: Frank Underhill is a renowned legal scholar and long-time CCF justice minister. {!<br><br>!}[? if difficulty < 0 : Actions - Judicial Affairs, Constitutional Reform ?]
 is-card: true
-card-image: img/portraits/RadbruchGustav.jpg
-view-if: radbruch_advisor = 0 and n_advisors < 3
-on-arrival: radbruch_advisor = 1; n_advisors += 1
+card-image: img/portraits/UnderhillFrank.jpg
+view-if: underhill_advisor = 0 and n_advisors < 3
+on-arrival: underhill_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 tags: nonfactional_advisor
 
-Gustav Radbruch is now an advisor.
+Frank Underhill is now an advisor.
 
 
-@add_stampfer
-title: Friedrich Stampfer
-subtitle: Friedrich Stampfer is the long-time editor-in-chief of Vorwärts, our party newspaper. {!<br><br>!}[? if difficulty < 0 : Actions - Media, Editorial Line, Cooperation with the PCC ?]
+@add_spry
+title: Graham Spry
+subtitle: Graham Spry is the long-time editor-in-chief of Vorwärts, our party newspaper. {!<br><br>!}[? if difficulty < 0 : Actions - Media, Editorial Line, Cooperation with the PCC ?]
 is-card: true
-card-image: img/portraits/StampferFriedrich.jpg
-view-if: stampfer_advisor = 0 and n_advisors < 3
-on-arrival: stampfer_advisor = 1; n_advisors += 1
+card-image: img/portraits/SpryGraham.jpg
+view-if: spry_advisor = 0 and n_advisors < 3
+on-arrival: spry_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 tags: nonfactional_advisor
 
-Friedrich Stampfer is now an advisor.
+Graham Spry is now an advisor.
 
 

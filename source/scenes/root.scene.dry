@@ -536,34 +536,34 @@ Q.march_on_berlin_timer = 0;
 
 // all the initial advisors are centrists.
 Q.coldwell_advisor = 1; // Major James Coldwell
-Q.muller_advisor = 1; // Hermann Müller
-Q.muller_dead = 0;
+Q.douglas_advisor = 1; // Tommy Douglas
+Q.douglas_dead = 0;
 // okay I know Arthur Crispien was a leader irl but i couldn't find much interesting about him...
 Q.crispien_advisor = 0; // Arthur Crispien
 Q.scott_advisor = 1; // Frank Scott
 
 // left advisors
-Q.sender_advisor = 0; // Toni Sender
-Q.levi_advisor = 0; // Paul Levi
-Q.levi_dead = 0;
-Q.rosenfeld_advisor = 0; // Kurt Rosenfeld
+Q.jamieson_advisor = 0; // Laura Jamieson
+Q.knowles_advisor = 0; // Stanley Knowles
+Q.knowles_dead = 0;
+Q.winch_advisor = 0; // Ernest Winch
 Q.seydewitrpc_advisor = 0; // William Irvine
 
 // centrist alternate advisors
-Q.pfulf_advisor = 0; // Antonie Pfülf
-Q.breitscheid_advisor = 0; // Rudolf Breitscheid
+Q.connell_advisor = 0; // Robert Connell
+Q.gardiner_advisor = 0; // Robert Gardiner
 
 // Reformist advisors
-Q.severing_advisor = 0; // Carl Severing
+Q.macinnis_advisor = 0; // Angus MacInnis
 Q.woodsworth_advisor = 0; // Woodsworth
-Q.juchacrpc_advisor = 0; // Marie Juchacz
+Q.juchacrpc_advisor = 0; // Agnes Macphail
 Q.wright_advisor = 0; // Percy Wright
 
 // Labor advisors
-Q.leipart_advisor = 0; // Theodor Leipart
-Q.aufhauser_advisor = 0; // Siegfried Aufhäuser
-Q.woytinsky_advisor = 0; // Wladimir Woytinsky (post-1930)
-Q.wissell_advisor = 0; // Rudolf Wissell
+Q.heaps_advisor = 0; // Albert Heaps
+Q.gillis_advisor = 0; // Clarence Gillis
+Q.forsey_advisor = 0; // Eugene Forsey (post-1930)
+Q.noseworthy_advisor = 0; // Joseph Noseworthy
 
 // Revisionist advisors
 Q.mierendorff_advisor = 0; // Carlo Mierendorf (post-1930)
@@ -573,8 +573,8 @@ Q.schumacher_advisor = 0; // Kurt Schumacher (post-1930)
 
 // Nonfactional advisors
 Q.hirschfeld_advisor = 0; // Magnus Hirschfeld
-Q.radbruch_advisor = 0; // Gustav Radbruch
-Q.stampfer_advisor = 0; // Friedrich Stampfer
+Q.underhill_advisor = 0; // Frank Underhill
+Q.spry_advisor = 0; // Graham Spry
 !}
 set-bg: img/map_of_canada.jpg
 new-page: true
