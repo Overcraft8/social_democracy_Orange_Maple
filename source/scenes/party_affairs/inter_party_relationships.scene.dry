@@ -14,52 +14,52 @@ The CCF cannot govern by itself yet. Because we do not have an electoral majorit
 
 - @liberals: Strengthen our bonds with the left-liberal Canadian Democratic Party and conservative-liberal Canadian People's Party.
 - @center: Strengthen our bonds with the Catholic Center Party.
-- @pcc: Work towards repairing relationships with the Communist Party.
+- @cp: Work towards repairing relationships with the Communist Party.
 - @ccf_alone: The CCF can stand alone for now.
 - @easy_discard
 
 
-@pcc
+@cp
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; pcc_inter_party_seen += 1
-go-to: pcc_blutmai if blutmai = 1; pcc_1 if blutmai = 0 and pcc_coalition_success = 0 and (pcc_relation < 40 or pcc_rectified_history = 1); pcc_rectification_of_history if pcc_relation >= 40 and pcc_rectified_history = 0; pcc_2 if pcc_coalition_success = 1 and pcc_rectified_history = 1
+on-arrival: resources -= 1; cp_inter_party_seen += 1
+go-to: cp_blutmai if blutmai = 1; cp_1 if blutmai = 0 and cp_coalition_success = 0 and (cp_relation < 40 or cp_rectified_history = 1); cp_rectification_of_history if cp_relation >= 40 and cp_rectified_history = 0; cp_2 if cp_coalition_success = 1 and cp_rectified_history = 1
 
-@pcc_1
-on-arrival: pcc_relation += 6*(1 - dissent); communist_coalition += 1 if pcc_inter_party_seen <= 1; reformist_dissent += 2; rpc_relation -= 2; cpc_relation -= 3
+@cp_1
+on-arrival: cp_relation += 6*(1 - dissent); communist_coalition += 1 if cp_inter_party_seen <= 1; reformist_dissent += 2; rpc_relation -= 2; cpc_relation -= 3
 
 The communists are suspicious of our overtures, especially the Stalinist leadership, who persist in calling us "social fascists". However, connections are made at the grassroots and local levels.
 
-@pcc_rectification_of_history
+@cp_rectification_of_history
 
-One stumbling block for our relations with the PCC is our history of conflict, dating back to 1918 and 1919. The PCC is especially contemptuous of Gustav Noske, the CCF "bloodhound" who reportedly ordered the violent suppression of the Spartacist uprising and other PCC revolts. They also blame us for the deaths of Rosa Luxemburg and Karl Liebknecht, two CCF-turned-PCC leaders who were killed during the suppression of the uprising.
+One stumbling block for our relations with the CP is our history of conflict, dating back to 1918 and 1919. The CP is especially contemptuous of Gustav Noske, the CCF "bloodhound" who reportedly ordered the violent suppression of the Spartacist uprising and other CP revolts. They also blame us for the deaths of Rosa Luxemburg and Karl Liebknecht, two CCF-turned-CP leaders who were killed during the suppression of the uprising.
 
-For further improvements in PCC relations, it might be necessary to expel Noske, and hold some sort of commemoration for Luxemburg and Liebknecht.
+For further improvements in CP relations, it might be necessary to expel Noske, and hold some sort of commemoration for Luxemburg and Liebknecht.
 
 - @yes_history: Yes, we must apologize for our past actions.
 - @no_history: No, we have no need to apologize.
 
 @yes_history
-on-arrival: reformist_dissent += 12; reformist_strength -= 2; neorevisionist_dissent += 5; left_dissent -= 6; left_strength += 5; pcc_rectified_history = 1; rpc_relation -= 6; cpc_relation -= 6; lpc_relation -= 4; pcc_relation += 8*(1-dissent); coalition_dissent += 1
+on-arrival: reformist_dissent += 12; reformist_strength -= 2; neorevisionist_dissent += 5; left_dissent -= 6; left_strength += 5; cp_rectified_history = 1; rpc_relation -= 6; cpc_relation -= 6; lpc_relation -= 4; cp_relation += 8*(1-dissent); coalition_dissent += 1
 
-As part of normalizing relations with the PCC, we have to acknowledge the wrongdoings of our past. We have expelled Noske, and have held public commemorations for those killed by troops during the uprisings.
+As part of normalizing relations with the CP, we have to acknowledge the wrongdoings of our past. We have expelled Noske, and have held public commemorations for those killed by troops during the uprisings.
 
 This leads to tensions with the moderates and reformists within our party, and criticism from the conservative and liberal parties.
 
 @no_history
-on-arrival: pcc_relation -= 3
+on-arrival: cp_relation -= 3
 
 We have no need to apologize for the actions of Ebert and Noske; it is the Communists' fault for launching a violent insurrection.
 
 
-@pcc_2
-on-arrival: pcc_relation += 8*(1 - dissent); communist_coalition += 1 if pcc_inter_party_seen <= 1; reformist_dissent += 2; rpc_relation -= 3; cpc_relation -= 3
+@cp_2
+on-arrival: cp_relation += 8*(1 - dissent); communist_coalition += 1 if cp_inter_party_seen <= 1; reformist_dissent += 2; rpc_relation -= 3; cpc_relation -= 3
 
-After the success of the coalition government with the PCC, they are much more amenable to us.
+After the success of the coalition government with the CP, they are much more amenable to us.
 
-@pcc_blutmai
-on-arrival: pcc_relation += 3*(1 - dissent); reformist_dissent += 1
+@cp_blutmai
+on-arrival: cp_relation += 3*(1 - dissent); reformist_dissent += 1
 
 After the events of Blütmai, reconciling with the Communists is difficult, if not impossible. Nevertheless, we must try.
 

@@ -57,9 +57,9 @@ on-arrival: rb_militancy -= 0.02; rb_strength -= 50; pacifism += 1
 By not fighting, the strength of the Reichsbanner atrophies. Pacifists in the party are gaining the upper hand.
 
 @truce_rfb
-choose-if: pcc_relation >= 45
-view-if: pcc_truce == 0
-unavailable-subtitle: The PCC is not interested.
-on-arrival: pcc_truce = 1; pcc_relation += 5; rfb_strength += 50; rb_strength += 50; sa_strength += 50;
+choose-if: cp_relation >= 45
+view-if: cp_truce == 0
+unavailable-subtitle: The CP is not interested.
+on-arrival: cp_truce = 1; cp_relation += 5; rfb_strength += 50; rb_strength += 50; sa_strength += 50;
 
-We have made at least a temporary truce with the PCC, so that our respective paramilitaries will stop fighting.
+We have made at least a temporary truce with the CP, so that our respective paramilitaries will stop fighting.

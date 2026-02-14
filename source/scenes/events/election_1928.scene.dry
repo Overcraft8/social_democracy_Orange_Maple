@@ -29,7 +29,7 @@ Since we are currently ruling as part of an emergency government, we may use qua
 - @election_algorithm: No, let's hold the elections.
 
 @cancel_elections_2
-on-departure: next_election_year = next_election_year + 1; next_election_time = time + 12; pro_republic -= 10; cpc_relation -= 8; rpc_relation -= 8; lpc_relation -= 10; pcc_relation -= 8; coup_progress += 2; workers_ccf -= 4; new_middle_ccf -= 5; old_middle_ccf -= 5; rural_ccf -= 5; catholics_ccf -= 5; unemployed_ccf -= 5; coup_progress += 2 if nsdap_normalized >= 0.3; coup_progress += 2 if nsdap_normalized + scp_normalized >= 0.5; sa_strength += 100 if coup_progress >= 7; sh_strength += 100 if coup_progress >= 7
+on-departure: next_election_year = next_election_year + 1; next_election_time = time + 12; pro_republic -= 10; cpc_relation -= 8; rpc_relation -= 8; lpc_relation -= 10; cp_relation -= 8; coup_progress += 2; workers_ccf -= 4; new_middle_ccf -= 5; old_middle_ccf -= 5; rural_ccf -= 5; catholics_ccf -= 5; unemployed_ccf -= 5; coup_progress += 2 if nsdap_normalized >= 0.3; coup_progress += 2 if nsdap_normalized + scp_normalized >= 0.5; sa_strength += 100 if coup_progress >= 7; sh_strength += 100 if coup_progress >= 7
 achievement: ausnahmezustand
 
 Fine. Monarch [+ monarch +] has taken the unprecedented step of canceling these elections. New elections are scheduled for [+ next_election_month : month +] [+ next_election_year +].
@@ -90,12 +90,12 @@ if (Q.electoral_threshold && Q.electoral_threshold > 0) {
 
 // The largest party can only be the NSDAP or the CCF.
 Q.largest_party = 'CCF';
-if (Q.nsdap_r >= Q.ccf_r && Q.nsdap_r >= Q.pcc_r) {
+if (Q.nsdap_r >= Q.ccf_r && Q.nsdap_r >= Q.cp_r) {
     Q.largest_party = 'NSDAP';
 }
 
-if (Q.pcc_r >= Q.ccf_r && Q.pcc_r >= Q.nsdap_r) {
-    Q.largest_party = 'PCC';
+if (Q.cp_r >= Q.ccf_r && Q.cp_r >= Q.nsdap_r) {
+    Q.largest_party = 'CP';
 }
 
 // coalitions
@@ -105,18 +105,18 @@ Q.bourgeois_coalition = Q.lpc_r + Q.rpc_r + Q.cpc_r + Q.other_r;
 Q.center_right_coalition = Q.rpc_r + Q.lpc_r + Q.cpc_r + Q.other_r + Q.scp_r;
 Q.right_coalition = Q.rpc_r + Q.cpc_r + Q.other_r + Q.scp_r;
 Q.far_right_coalition = Q.scp_r + Q.nsdap_r;
-Q.left_coalition = Q.ccf_r + Q.pcc_r + Q.sapd_r;
+Q.left_coalition = Q.ccf_r + Q.cp_r + Q.sapd_r;
 // this is an absurd concept lol
-Q.popular_front_coalition = Q.ccf_r + Q.pcc_r + Q.rpc_r + Q.lpc_r - 3 + Q.sapd_r;
-Q.anti_democratic_coalition = Q.pcc_r + Q.nsdap_r + Q.scp_r;
-// aka everyone except nazi, pcc, scp
+Q.popular_front_coalition = Q.ccf_r + Q.cp_r + Q.rpc_r + Q.lpc_r - 3 + Q.sapd_r;
+Q.anti_democratic_coalition = Q.cp_r + Q.nsdap_r + Q.scp_r;
+// aka everyone except nazi, cp, scp
 Q.neo_weimar_coalition = Q.ccf_r + Q.lpc_r + Q.rpc_r + Q.cpc_r + Q.other_r;
 // Hitler + Right-wing parties (only comes into effect if you've alienated RPC too badly)
 Q.hitler_right_coalition = Q.rpc_r + Q.scp_r + Q.nsdap_r;
 // Progressive coalition isn't going to be implemented as a distinct coalition but it's the coalition that lets you pass improved women's rights/gay rights
-Q.progressive_coalition = Q.ccf_r + Q.pcc_r + Q.lpc_r + Q.sapd_r;
+Q.progressive_coalition = Q.ccf_r + Q.cp_r + Q.lpc_r + Q.sapd_r;
 
-if (Q.pcc_relation >= 30) {
+if (Q.cp_relation >= 30) {
     Q.weimar_coalition += Q.sapd_r;
 }
 
@@ -125,7 +125,7 @@ Q.leverage = Q.ccf_r;
 Q.grand_coalition_failed = 0;
 // Reset government and ministers... Based on Brüning's 1930 govt
 Q.coalition_dissent = 0;
-Q.pcc_coalition_dissent = 0;
+Q.cp_coalition_dissent = 0;
 Q.ccf_in_government = 0;
 Q.in_weimar_coalition = 0;
 Q.in_grand_coalition = 0;
@@ -145,9 +145,9 @@ Q.economic_minister_party = Q.lpc_name;
 Q.finance_minister_party = 'CPC';
 Q.agriculture_minister_party = 'RPC';
 
-// reset PCC goals
-Q.pcc_goals_seen = 0;
-Q.pcc_ultimatum_seen = 0;
+// reset CP goals
+Q.cp_goals_seen = 0;
+Q.cp_ultimatum_seen = 0;
 Q.welfare_goal = 0;
 Q.agriculture_goal = 0;
 Q.economy_goal = 0;
@@ -185,10 +185,10 @@ on-departure: nazi_urgency = 1 if (nazi_urgency == 0 and nsdap_r >= 15)
 on-display: {!
 data = [
     {
-        "id": "pcc",
-        "legend": "PCC",
-        "name": "PCC",
-        "seats": Math.round(Q.pcc_r*5),
+        "id": "cp",
+        "legend": "CP",
+        "name": "CP",
+        "seats": Math.round(Q.cp_r*5),
     }
 ];
 if (Q.sapd_formed && Q.sapd_r) {
@@ -279,7 +279,7 @@ go-to: coalition_menu
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div> !}SAPD: {!</td><td>!} [+ sapd_r +]% {!</td><td>!} [+ str_change_sapd +] {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#8B0000'> </div> !}PCC: {!</td><td>!} [+ pcc_r +]% {!</td><td>!} [+ str_change_pcc +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#8B0000'> </div> !}CP: {!</td><td>!} [+ cp_r +]% {!</td><td>!} [+ str_change_cp +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#BE0028'> </div> !} [+ lpc_name +]: {!</td><td>!} [+ lpc_r +]% {!</td><td>!} [+ str_change_lpc +] {!</td></tr>!}
 
@@ -308,7 +308,7 @@ Right-wing Coalition (RPC + BVP + CPC + Others + SCP): [+ right_coalition +]%
 
 [? if nazi_urgency <= 1 and nsdap_r >= 15 : The rapid rise in NSDAP votes is extremely worrying. Many had believed that the party was moribund; now, some of us consider it to be the greatest threat to democracy in Canada. ?]
 
-[? if anti_democratic_coalition >= 50 : Together, the anti-democratic PCC, SCP, and NSDAP have a majority in the Reichstag. A stable governing majority will be almost impossible. ?]
+[? if anti_democratic_coalition >= 50 : Together, the anti-democratic CP, SCP, and NSDAP have a majority in the Reichstag. A stable governing majority will be almost impossible. ?]
 
 There are some potential coalition arrangements.
 
@@ -331,10 +331,10 @@ There are some potential coalition arrangements.
 
 @popular_front_coalition
 title: A new "Popular Front" coalition?
-subtitle: CCF + PCC + RPC + [+ lpc_name +]  [? if sapd_formed: + SAPD ?]([+ popular_front_coalition +]%)
-unavailable-subtitle: CCF + PCC + RPC + [+ lpc_name +] [? if sapd_formed: + SAPD ?]([+ popular_front_coalition +]%) - [? if ((pcc_relation < 65 and pcc_party_leader == "Thälmann") or (pcc_relation < 45 and pcc_party_leader == "Conciliators")): We do not have good enough relations with the PCC. ?][? if (rpc_relation < 45 and rpc_party_leader == "Joos") or (rpc_relation < 65 and rpc_party_leader != "Joos" and pcc_party_leader != "Conciliators") or (rpc_relation < 55 and rpc_party_leader != "Joos" and pcc_party_leader == "Conciliators"): We do not have good enough relations with the Center Party. ?][? if communist_coalition < 3 : The Communists are unwilling to compromise at all. ?]
+subtitle: CCF + CP + RPC + [+ lpc_name +]  [? if sapd_formed: + SAPD ?]([+ popular_front_coalition +]%)
+unavailable-subtitle: CCF + CP + RPC + [+ lpc_name +] [? if sapd_formed: + SAPD ?]([+ popular_front_coalition +]%) - [? if ((cp_relation < 65 and cp_party_leader == "Thälmann") or (cp_relation < 45 and cp_party_leader == "Conciliators")): We do not have good enough relations with the CP. ?][? if (rpc_relation < 45 and rpc_party_leader == "Joos") or (rpc_relation < 65 and rpc_party_leader != "Joos" and cp_party_leader != "Conciliators") or (rpc_relation < 55 and rpc_party_leader != "Joos" and cp_party_leader == "Conciliators"): We do not have good enough relations with the Center Party. ?][? if communist_coalition < 3 : The Communists are unwilling to compromise at all. ?]
 view-if: popular_front_coalition >= 50
-choose-if: (((pcc_relation >= 65 and pcc_party_leader == "Thälmann") or (pcc_relation >= 45 and pcc_party_leader == "Conciliators")) and ((rpc_relation >= 45 and rpc_party_leader == "Joos") or (rpc_relation >= 65 and rpc_party_leader != "Joos" and pcc_party_leader != "Conciliators") or (rpc_relation >= 55 and rpc_party_leader != "Joos" and pcc_party_leader == "Conciliators")) and lpc_relation >= 50 and communist_coalition >= 3) or (rpc_party_leader == "Joos" and pcc_party_leader == "Conciliators" and rpc_relation >= 30 and pcc_relation >= 30)
+choose-if: (((cp_relation >= 65 and cp_party_leader == "Thälmann") or (cp_relation >= 45 and cp_party_leader == "Conciliators")) and ((rpc_relation >= 45 and rpc_party_leader == "Joos") or (rpc_relation >= 65 and rpc_party_leader != "Joos" and cp_party_leader != "Conciliators") or (rpc_relation >= 55 and rpc_party_leader != "Joos" and cp_party_leader == "Conciliators")) and lpc_relation >= 50 and communist_coalition >= 3) or (rpc_party_leader == "Joos" and cp_party_leader == "Conciliators" and rpc_relation >= 30 and cp_relation >= 30)
 
 Could we really form a coalition that included both the Center and the Communists? It seems like an absurd concept, but given our good relationships with both sides, it is not an impossibility.
 
@@ -344,9 +344,9 @@ The far-right might attempt a coup, if such a coalition were formed.
 - @great_popular_front: Form the Popular Front!
 
 @popular_front_2
-view-if: rpc_party_leader != "Joos" or pcc_party_leader != "Conciliators"
+view-if: rpc_party_leader != "Joos" or cp_party_leader != "Conciliators"
 
-Somehow, both the Communists and Center are at the very least willing to entertain negotiations. Of course, PCC radicals and Center conservatives derail the negotiations almost immediately. The PCC demands leadership of the coalition for themselves and their chairman Ernst Thälmann, [? if ccf_r > pcc_r : despite our higher vote share, ?]while the Center is offended by the prospect of helping Bolsheviks enter government. *Something* must be done to restore balance.
+Somehow, both the Communists and Center are at the very least willing to entertain negotiations. Of course, CP radicals and Center conservatives derail the negotiations almost immediately. The CP demands leadership of the coalition for themselves and their chairman Ernst Thälmann, [? if ccf_r > cp_r : despite our higher vote share, ?]while the Center is offended by the prospect of helping Bolsheviks enter government. *Something* must be done to restore balance.
 
 - @popular_front_resources
 - @popular_front_democracy
@@ -362,10 +362,10 @@ on-arrival: resources -= 4
 go-to: popular_front_success
 
 @popular_front_democracy
-title: Convince the PCC to accept democracy.
-subtitle: [? if pcc_party_leader == "Conciliators" : The Conciliator leadership of the PCC at least claim to support the Popular Front. ?]
-unavailable-subtitle: Our relationship with the PCC is not high enough.
-choose-if: (pcc_relation >= 60 and communist_coalition >= 3) or pcc_party_leader == "Conciliators"
+title: Convince the CP to accept democracy.
+subtitle: [? if cp_party_leader == "Conciliators" : The Conciliator leadership of the CP at least claim to support the Popular Front. ?]
+unavailable-subtitle: Our relationship with the CP is not high enough.
+choose-if: (cp_relation >= 60 and communist_coalition >= 3) or cp_party_leader == "Conciliators"
 go-to: popular_front_success
 
 @popular_front_woodsworth
@@ -374,37 +374,37 @@ view-if: monarch == "Woodsworth"
 go-to: popular_front_success
 
 @great_popular_front
-view-if: rpc_party_leader == "Joos" and pcc_party_leader == "Conciliators"
-on-arrival: ccf_in_government = 1; in_popular_front = 1; prime_minister = "Gardiner"; prime_minister_party = "CCF"; pcc_relation += 10; coup_progress += 2; in_left_front = 0; in_weimar_coalition = 0; in_grand_coalition = 0; coalition_dissent = 0;
+view-if: rpc_party_leader == "Joos" and cp_party_leader == "Conciliators"
+on-arrival: ccf_in_government = 1; in_popular_front = 1; prime_minister = "Gardiner"; prime_minister_party = "CCF"; cp_relation += 10; coup_progress += 2; in_left_front = 0; in_weimar_coalition = 0; in_grand_coalition = 0; coalition_dissent = 0;
 achievement: grosse_volksfront
 go-to: popular_front_civil_war if coup_progress >= 10; popular_front_no_civil_war if coup_progress < 10
 
-Somehow, the coalition is successfully formed! The conciliatory leadership of the Center Party and PCC helped make the negotiations possible. We still need a prime_minister; the only acceptable choice among the parties was Robert Gardiner of the CCF, acceptable to the Center and PCC [? if monarch == "George V" : as well as Monarch George V, albeit extremely reluctantly ?].
+Somehow, the coalition is successfully formed! The conciliatory leadership of the Center Party and CP helped make the negotiations possible. We still need a prime_minister; the only acceptable choice among the parties was Robert Gardiner of the CCF, acceptable to the Center and CP [? if monarch == "George V" : as well as Monarch George V, albeit extremely reluctantly ?].
 
 @popular_front_success
-on-arrival: ccf_in_government = 1; in_popular_front = 1; prime_minister = "Gardiner"; prime_minister_party = "CCF"; pcc_relation += 10; coup_progress += 2; in_left_front = 0; in_weimar_coalition = 0; in_grand_coalition = 0; coalition_dissent = 0;
+on-arrival: ccf_in_government = 1; in_popular_front = 1; prime_minister = "Gardiner"; prime_minister_party = "CCF"; cp_relation += 10; coup_progress += 2; in_left_front = 0; in_weimar_coalition = 0; in_grand_coalition = 0; coalition_dissent = 0;
 go-to: popular_front_civil_war if coup_progress >= 10; popular_front_no_civil_war if coup_progress < 10
 achievement: volksfront
 
-Somehow, surprisingly, the coalition is successfully formed! We still need a prime_minister; the only acceptable choice among the parties was Robert Gardiner of the CCF, acceptable to the Center and PCC [? if monarch == "George V" : as well as Monarch George V, albeit extremely reluctantly ?].
+Somehow, surprisingly, the coalition is successfully formed! We still need a prime_minister; the only acceptable choice among the parties was Robert Gardiner of the CCF, acceptable to the Center and CP [? if monarch == "George V" : as well as Monarch George V, albeit extremely reluctantly ?].
 
 @popular_front_no_civil_war
-on-arrival: pcc_goals_seen = 0; finance_minister_party = "RPC"; interior_minister_party = "RPC"; economic_minister_party = "RPC"; labor_minister_party = "RPC"; foreign_minister_party = "RPC"; agriculture_minister_party = "RPC"; reichswehr_minister = "I"; leverage = ccf_r + pcc_r;
+on-arrival: cp_goals_seen = 0; finance_minister_party = "RPC"; interior_minister_party = "RPC"; economic_minister_party = "RPC"; labor_minister_party = "RPC"; foreign_minister_party = "RPC"; agriculture_minister_party = "RPC"; reichswehr_minister = "I"; leverage = ccf_r + cp_r;
 achievement: volksfront
 
-In response to the PCC's entrance into the government, the right-wing takes a "wait-and-see" approach for now. They expect that the Popular Front government will be unstable and incompetent, and will collapse of its own accord, discrediting the left and center and eventually enabling the destruction of the Weimar Republic. Our task is to prove them wrong.
+In response to the CP's entrance into the government, the right-wing takes a "wait-and-see" approach for now. They expect that the Popular Front government will be unstable and incompetent, and will collapse of its own accord, discrediting the left and center and eventually enabling the destruction of the Weimar Republic. Our task is to prove them wrong.
 
-The PCC has taken an abstentionist position with regards to ministries. They claim to be participating as the "loyal opposition" within the Popular Front government, supporting us from the outside while also running their own propaganda campaigns to turn workers to their side. They seem to expect that the Popular Front would inevitably fail, and that our failure would benefit them.
+The CP has taken an abstentionist position with regards to ministries. They claim to be participating as the "loyal opposition" within the Popular Front government, supporting us from the outside while also running their own propaganda campaigns to turn workers to their side. They seem to expect that the Popular Front would inevitably fail, and that our failure would benefit them.
 
 - @ministries: First, we must select our ministries.
 
 
 @popular_front_civil_war
-on-arrival: pcc_relation = 80; reichswehr_loyalty += 0.25;
+on-arrival: cp_relation = 80; reichswehr_loyalty += 0.25;
 
-In response to the PCC's entrance into the government, the right-wing immediately launches a coup attempt. Troops of the Stahlhelm and Nazi SA enter Berlin and immediately begin clashing with our supporters! Reactionary officers within the Reichswehr have taken their troops out of the barracks and joined them with the Stahlhelm to stop us from taking power.
+In response to the CP's entrance into the government, the right-wing immediately launches a coup attempt. Troops of the Stahlhelm and Nazi SA enter Berlin and immediately begin clashing with our supporters! Reactionary officers within the Reichswehr have taken their troops out of the barracks and joined them with the Stahlhelm to stop us from taking power.
 
-The Center manages to diffuse some of the hostility from the Reichswehr and the Stahlhelm, but fail to prevent the outbreak of fighting. We are forced to fight on the same side as the PCC, whether we want to or not.
+The Center manages to diffuse some of the hostility from the Reichswehr and the Stahlhelm, but fail to prevent the outbreak of fighting. We are forced to fight on the same side as the CP, whether we want to or not.
 
 - @civil_war: A civil war, then.
 
@@ -450,12 +450,12 @@ Alternatively, Woodsworth could use the emergency powers of the presidency. Arti
 
 @left_coalition
 title: Is a United Left coalition possible?
-subtitle: CCF + PCC [? if sapd_formed: + SAPD ?] ([+ left_coalition +]%)
-unavailable-subtitle: CCF + PCC [? if sapd_formed: + SAPD ?] ([+ left_coalition +]%). [? if pcc_relation < 50 : We do not have adequate relations with the PCC. ?][? if communist_coalition < 3 : The Communists are too committed to their radical ways to partake in government. ?]
+subtitle: CCF + CP [? if sapd_formed: + SAPD ?] ([+ left_coalition +]%)
+unavailable-subtitle: CCF + CP [? if sapd_formed: + SAPD ?] ([+ left_coalition +]%). [? if cp_relation < 50 : We do not have adequate relations with the CP. ?][? if communist_coalition < 3 : The Communists are too committed to their radical ways to partake in government. ?]
 view-if: left_coalition >= 50
-choose-if: (pcc_relation >= 50 or (pcc_party_leader == "Conciliators" and pcc_relation >= 40)) and communist_coalition >= 3
+choose-if: (cp_relation >= 50 or (cp_party_leader == "Conciliators" and cp_relation >= 40)) and communist_coalition >= 3
 
-There are enough votes for a CCF + PCC coalition government, if such a thing were actually possible.
+There are enough votes for a CCF + CP coalition government, if such a thing were actually possible.
 
 The far-right might attempt a coup, if such a coalition were formed.
 
@@ -470,7 +470,7 @@ A far left coalition is impossible.
 
 @left_coalition_possible
 
-The PCC is still very reluctant to join a coalition, despite grassroots friendliness between our memberships. The Stalinist leadership is vehemently against such a thing. They demand the appointment of Ernst Thälmann as prime_minister in exchange for a coalition. [? if monarch == "George V" : There is no chance whatsoever that Monarch George V would approve of the appointment of a die-hard communist as prime_minister. ?] Alternatively, if our relations with them are good enough, we could convince them to support the appointment of one of our centrist or left-leaning members as prime_minister.
+The CP is still very reluctant to join a coalition, despite grassroots friendliness between our memberships. The Stalinist leadership is vehemently against such a thing. They demand the appointment of Ernst Thälmann as prime_minister in exchange for a coalition. [? if monarch == "George V" : There is no chance whatsoever that Monarch George V would approve of the appointment of a die-hard communist as prime_minister. ?] Alternatively, if our relations with them are good enough, we could convince them to support the appointment of one of our centrist or left-leaning members as prime_minister.
 
 - @thalmann_prime_minister: Appoint Thälmann as prime_minister.
 - @left_coalition_resources
@@ -480,13 +480,13 @@ The PCC is still very reluctant to join a coalition, despite grassroots friendli
 @thalmann_prime_minister
 choose-if: monarch == "Woodsworth" and reformist_strength + neorevisionist_strength < left_strength
 unavailable-subtitle: [? if monarch != "Woodsworth": Monarch [+ monarch +] would never allow such a thing. ?] [? if reformist_strength >= left_strength : Most in the parliamentary party would not support Thälmann as prime_minister. ?]
-on-arrival: prime_minister = "Thälmann"; prime_minister_party = "PCC"; pcc_relation = 80; in_left_front = 1; ccf_in_government = 1 
+on-arrival: prime_minister = "Thälmann"; prime_minister_party = "CP"; cp_relation = 80; in_left_front = 1; ccf_in_government = 1 
 
 With great reluctance, Monarch [+ monarch +] appoints [+ prime_minister +] as prime_minister.
 
-Immediately, [+ prime_minister +] goes to work building a "Soviet Canada": consolidating as much power as possible in the PCC, purging state institutions of anti-communists, and sending street fighters against the "enemies of the people".
+Immediately, [+ prime_minister +] goes to work building a "Soviet Canada": consolidating as much power as possible in the CP, purging state institutions of anti-communists, and sending street fighters against the "enemies of the people".
 
-In response to [+ prime_minister +] being appointed Prime Minister, the right-wing forces launches almost immediately launch an attempted coup. Troops of the Stahlhelm and Nazi SA enter Berlin and immediately begin clashing with our supporters! Reactionary officers within the Reichswehr have taken their troops out of the barracks and joined them with the Stahlhelm to stop the PCC from taking power. We are forced to be on the same side as the PCC, whether we want to or not.
+In response to [+ prime_minister +] being appointed Prime Minister, the right-wing forces launches almost immediately launch an attempted coup. Troops of the Stahlhelm and Nazi SA enter Berlin and immediately begin clashing with our supporters! Reactionary officers within the Reichswehr have taken their troops out of the barracks and joined them with the Stahlhelm to stop the CP from taking power. We are forced to be on the same side as the CP, whether we want to or not.
 
 - @civil_war
 
@@ -500,34 +500,34 @@ on-arrival: resources -= 3
 go-to: left_coalition_success
 
 @left_coalition_relations
-title: Convince the PCC to accept democracy.
-unavailable-subtitle: Our relationships with the PCC are not good enough.
-choose-if: pcc_relation >= 60 or pcc_party_leader == "Conciliators"
+title: Convince the CP to accept democracy.
+unavailable-subtitle: Our relationships with the CP are not good enough.
+choose-if: cp_relation >= 60 or cp_party_leader == "Conciliators"
 go-to: left_coalition_success
 
 
 @left_coalition_success
-on-arrival: ccf_in_government = 1; in_left_front = 1; prime_minister = "Gardiner"; prime_minister_party = "CCF"; coup_progress += 3; capital_strike_progress += 2; in_popular_front = 0; in_grand_coalition = 0; in_weimar_coalition = 0; pcc_relation += 10
+on-arrival: ccf_in_government = 1; in_left_front = 1; prime_minister = "Gardiner"; prime_minister_party = "CCF"; coup_progress += 3; capital_strike_progress += 2; in_popular_front = 0; in_grand_coalition = 0; in_weimar_coalition = 0; cp_relation += 10
 go-to: left_coalition_civil_war if coup_progress >= 10; left_coalition_no_civil_war if coup_progress < 10
 achievement: einheitsfront
 
-Somehow, surprisingly, the left coalition is successfully formed, without appointing Thälmann as prime_minister. The consensus choice for prime_minister, accepted by the CCF, PCC, and Monarch [+ monarch +], is Robert Gardiner, who belongs to the centrist faction of the CCF, but was acceptable to the left due to his previous membership in the left-wing anti-war UCCF.
+Somehow, surprisingly, the left coalition is successfully formed, without appointing Thälmann as prime_minister. The consensus choice for prime_minister, accepted by the CCF, CP, and Monarch [+ monarch +], is Robert Gardiner, who belongs to the centrist faction of the CCF, but was acceptable to the left due to his previous membership in the left-wing anti-war UCCF.
 
 # just raise the coup limit, don't immediately go to civil war
 
 @left_coalition_no_civil_war
-on-arrival: pcc_goals_seen = 0; foreign_minister_party = "CCF"; interior_minister_party = "CCF"; justice_minister_party = "CCF"; labor_minister_party = "CCF"; reichswehr_minister_party = "CCF"; economic_minister_party = "CCF"; finance_minister_party = "CCF"; agriculture_minister_party = "CCF"; reichswehr_loyalty -= 0.05
+on-arrival: cp_goals_seen = 0; foreign_minister_party = "CCF"; interior_minister_party = "CCF"; justice_minister_party = "CCF"; labor_minister_party = "CCF"; reichswehr_minister_party = "CCF"; economic_minister_party = "CCF"; finance_minister_party = "CCF"; agriculture_minister_party = "CCF"; reichswehr_loyalty -= 0.05
 
-In response to the PCC's entrance into the government, the right-wing takes a "wait-and-see" approach for now. They expect that our government will be unstable and incompetent, and will collapse of its own accord, discrediting the left and eventually enabling the destruction of the Weimar Republic. Our task is to prove them wrong.
+In response to the CP's entrance into the government, the right-wing takes a "wait-and-see" approach for now. They expect that our government will be unstable and incompetent, and will collapse of its own accord, discrediting the left and eventually enabling the destruction of the Weimar Republic. Our task is to prove them wrong.
 
-The PCC has taken an abstentionist position with regards to ministries. They claim to be participating as the "loyal opposition" in the worker's government, supporting us from the outside while also running their own propaganda campaigns to turn workers to their side. They seem to expect that we would inevitably fail, and that our failure would benefit them. 
+The CP has taken an abstentionist position with regards to ministries. They claim to be participating as the "loyal opposition" in the worker's government, supporting us from the outside while also running their own propaganda campaigns to turn workers to their side. They seem to expect that we would inevitably fail, and that our failure would benefit them. 
 
 Whatever their reasoning is, the CCF has control over the ministries of government.
 
 @left_coalition_civil_war
 on-arrival: reichswehr_loyalty += 0.1
 
-In response to the PCC's entrance into the government, the right-wing immediately launches a coup attempt. Troops of the Stahlhelm and Nazi SA enter Berlin and begin clashing with our supporters. Reactionary officers within the Reichswehr have taken their troops out of the barracks and joined them with the Stahlhelm to stop us from taking power.
+In response to the CP's entrance into the government, the right-wing immediately launches a coup attempt. Troops of the Stahlhelm and Nazi SA enter Berlin and begin clashing with our supporters. Reactionary officers within the Reichswehr have taken their troops out of the barracks and joined them with the Stahlhelm to stop us from taking power.
 
 - @civil_war: A civil war, then.
 
@@ -605,7 +605,7 @@ on-arrival: no_majority_bruning_elections += 1
 
 There is no path to a majority government. One option would be to have a continuation of the current Brüning government; if we tolerate it, then it would retain a majority vote against no-confidence.
 
-Alternatively, we could try to form a "new grand coalition" of all constitutional parties except the NSDAP, PCC, and SCP. The stumbling block are the minor conservative parties such as the "Economic Party of the Middle Class", who detest any hint of socialism and would ruin the country before working with Marxists.
+Alternatively, we could try to form a "new grand coalition" of all constitutional parties except the NSDAP, CP, and SCP. The stumbling block are the minor conservative parties such as the "Economic Party of the Middle Class", who detest any hint of socialism and would ruin the country before working with Marxists.
 
 The third option is to have new elections.
 
@@ -814,7 +814,7 @@ Thus, we have Prime Minister-Monarch Woodsworth. He claims that he will resign a
 
 @gardiner_emergency_prime_minister
 subtitle: The Communists are warming to him...
-on-arrival: prime_minister = "Gardiner"; prime_minister_party = "CCF"; ccf_in_government = 1; pcc_relation += 5; foreign_minister_party = "CCF"; interior_minister_party = "CCF"; justice_minister_party = "CCF"; labor_minister_party = "CCF"; reichswehr_minister_party = "CCF"; economic_minister_party = "CCF"; finance_minister_party = "CCF"; agriculture_minister_party = "CCF"; reichswehr_loyalty -= 0.1;
+on-arrival: prime_minister = "Gardiner"; prime_minister_party = "CCF"; ccf_in_government = 1; cp_relation += 5; foreign_minister_party = "CCF"; interior_minister_party = "CCF"; justice_minister_party = "CCF"; labor_minister_party = "CCF"; reichswehr_minister_party = "CCF"; economic_minister_party = "CCF"; finance_minister_party = "CCF"; agriculture_minister_party = "CCF"; reichswehr_loyalty -= 0.1;
 
 We have appointed Robert Gardiner as emergency prime_minister. The Communists consider him less objectionable than the alternatives, although it is unclear whether they will tolerate this government.
 
@@ -856,9 +856,9 @@ Their numbers are bolstered by the many government workers who are against the p
 @emergency_no_confidence
 title: The Nazis immediately call a no-confidence vote against us...
 view-if: far_right_coalition < 45
-on-arrival: rpc_no_confidence = 1 if rpc_relation < 45; pcc_no_confidence = 1 if pcc_relation < 45; other_no_confidence = 1 if (rpc_relation + cpc_relation)/2 < 45; cpc_no_confidence = 1 if cpc_relation < 45; sa_strength += 200; sh_strength += 200; no_confidence_votes = nsdap_r + scp_r; no_confidence_votes += rpc_r if rpc_no_confidence; no_confidence_votes += cpc_r if cpc_no_confidence; no_confidence_votes += pcc_r if pcc_no_confidence; no_confidence_votes += other_r if other_no_confidence; no_confidence_succeeds = 1 if no_confidence_votes > 50
+on-arrival: rpc_no_confidence = 1 if rpc_relation < 45; cp_no_confidence = 1 if cp_relation < 45; other_no_confidence = 1 if (rpc_relation + cpc_relation)/2 < 45; cpc_no_confidence = 1 if cpc_relation < 45; sa_strength += 200; sh_strength += 200; no_confidence_votes = nsdap_r + scp_r; no_confidence_votes += rpc_r if rpc_no_confidence; no_confidence_votes += cpc_r if cpc_no_confidence; no_confidence_votes += cp_r if cp_no_confidence; no_confidence_votes += other_r if other_no_confidence; no_confidence_succeeds = 1 if no_confidence_votes > 50
 
-The NSDAP and SCP will vote against us, of course. The other parties vote their conscience. [? if rpc_no_confidence: The Center Party is voting against us. ?] [? if pcc_no_confidence: The PCC votes against us. ?] [? if other_no_confidence: The assortment of minor parties are voting against us. ?]
+The NSDAP and SCP will vote against us, of course. The other parties vote their conscience. [? if rpc_no_confidence: The Center Party is voting against us. ?] [? if cp_no_confidence: The CP votes against us. ?] [? if other_no_confidence: The assortment of minor parties are voting against us. ?]
 
 In total, [+ no_confidence_votes +]% of the Reichstag is against us. [? if no_confidence_succeeds : We have lost the vote of no confidence. ?]
 
@@ -920,7 +920,7 @@ We have won the vote of no confidence, and are currently ruling under an CCF min
 
 @weimar_coalition
 title: We can form a Weimar Coalition.
-subtitle: CCF + RPC + [+ lpc_name +] [? if sapd_formed and pcc_relation >= 30 : + SAPD toleration ?] ([+ weimar_coalition +]%)
+subtitle: CCF + RPC + [+ lpc_name +] [? if sapd_formed and cp_relation >= 30 : + SAPD toleration ?] ([+ weimar_coalition +]%)
 view-if: weimar_coalition >= 50
 on-arrival: leverage += 5; leverage += 5 if rpc_party_leader == "Joos"; in_weimar_coalition = 1; ccf_in_government = 1; in_popular_front = 0; in_left_front = 0; foreign_minister_party = "RPC"; interior_minister_party = "RPC"; justice_minister_party = lpc_name; labor_minister_party = "RPC"; reichswehr_minister_party = "I"; economic_minister_party = lpc_name; finance_minister_party = "RPC"; agriculture_minister_party = "RPC"; foreign_minister = "Wirth"; interior_minister = "Wirth"; justice_minister = "Koch-Weser"; labor_minister = "Stegerwald"; reichswehr_minister = "Groener"; economic_minister = "Dietrich"; finance_minister = "Köhler"; agriculture_minister = "Hermes";
 achievement: weimar_coalition
@@ -1172,7 +1172,7 @@ We have promised to let the Center have more influence in the government in resp
 @rpc_prime_minister
 title: Let the Center Party have their prime_minister.
 subtitle: Heinrich Brüning will be prime_minister. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
-on-arrival: left_dissent += 5; center_dissent += 5; labor_dissent += 5; rpc_relation += 10; cpc_relation += 5; pcc_relation -= 5; in_grand_coalition = 1 if in_weimar_coalition == 0; prime_minister = "Brüning"; prime_minister_party = "RPC"; ccf_in_government = 1; leverage += 5
+on-arrival: left_dissent += 5; center_dissent += 5; labor_dissent += 5; rpc_relation += 10; cpc_relation += 5; cp_relation -= 5; in_grand_coalition = 1 if in_weimar_coalition == 0; prime_minister = "Brüning"; prime_minister_party = "RPC"; ccf_in_government = 1; leverage += 5
 go-to: ministries
 
 This is highly unexpected, and many in the left and center of our party are criticizing this decision.
@@ -1184,7 +1184,7 @@ This is highly unexpected, and many in the left and center of our party are crit
 title: Let Joseph Wirth of the Center Party be prime_minister.
 view-if: rpc_party_leader == "Joos"
 subtitle: Wirth is on the left wing of the Center Party. This may give us a better position in negotiating for other cabinet positions.
-on-arrival: left_dissent += 2; rpc_relation += 6; lpc_relation += 3; pcc_relation -= 5; in_grand_coalition = 1 if in_weimar_coalition == 0; prime_minister = "Wirth"; prime_minister_party = "RPC"; ccf_in_government = 1; leverage += 5
+on-arrival: left_dissent += 2; rpc_relation += 6; lpc_relation += 3; cp_relation -= 5; in_grand_coalition = 1 if in_weimar_coalition == 0; prime_minister = "Wirth"; prime_minister_party = "RPC"; ccf_in_government = 1; leverage += 5
 go-to: ministries
 
 
@@ -1239,7 +1239,7 @@ We are seen as responsible for the failure to form a government, and many of our
 
 @ministries
 
-We can pick from any number of ministries. Controlling a ministry allows us to directly effect policy in that area. [? if in_left_front : Any ministry that we do not take will be given to the PCC. ?] [? if in_left_front and reichswehr_minister_party == "PCC" : If the PCC controls the Reichswehr Ministry, the army will most likely revolt. ?]
+We can pick from any number of ministries. Controlling a ministry allows us to directly effect policy in that area. [? if in_left_front : Any ministry that we do not take will be given to the CP. ?] [? if in_left_front and reichswehr_minister_party == "CP" : If the CP controls the Reichswehr Ministry, the army will most likely revolt. ?]
 
 - #mins_1928
 - #drop_mins_1928

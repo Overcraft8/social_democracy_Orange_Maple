@@ -36,7 +36,7 @@ subtitle: He is a good organizer, but is he also a good prime_minister?
 Our coalition partners are reluctant to accept the new Prime Minister, but they do not make loud objections.
 
 @gardiner_prime_minister
-on-arrival: prime_minister = "Gardiner"; prime_minister_party = "CCF"; rpc_relation -= 5; cpc_relation -= 5; pcc_relation += 1
+on-arrival: prime_minister = "Gardiner"; prime_minister_party = "CCF"; rpc_relation -= 5; cpc_relation -= 5; cp_relation += 1
 subtitle: The Center Party is worried about his left-leaning tendencies.
 
 Our coalition partners are reluctant to accept the new Prime Minister, but they do not make loud objections.

@@ -73,7 +73,7 @@ CCF: [+ ccf_r +]%
 # 1928: 15, 1930: 15, 1932: 
 RPC + BVP: [+ rpc_r +]%
 # 1928: 10, 1930: 13
-PCC: [+ pcc_r +]%
+CP: [+ cp_r +]%
 # 1928: 5, 1930: 4 (as DstP)
 [+ lpc_name +]: [+ lpc_r +]%
 # 1928: 9, 1930: 5
@@ -90,7 +90,7 @@ CCF position: [? if ccf_toleration : toleration ?][? if ccf_in_government : in g
 
 [? if ccf_in_government and not in_ccf_majority and not in_left_front : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
-[? if ccf_in_government and (in_left_front or in_popular_front): PCC coalition dissent: [+ pcc_coalition_dissent : coalition_dissent +] ?]
+[? if ccf_in_government and (in_left_front or in_popular_front): CP coalition dissent: [+ cp_coalition_dissent : coalition_dissent +] ?]
 
 @cabinet
 go-to: menu
@@ -119,7 +119,7 @@ go-to: menu
 
 **Demographic Groups**
 
-**Working Class**: The urban working class - blue-collar workers in factories, workshops, mines, and the like. Most are socialist, supporting either the CCF or PCC. They make up 40-50% of the population.
+**Working Class**: The urban working class - blue-collar workers in factories, workshops, mines, and the like. Most are socialist, supporting either the CCF or CP. They make up 40-50% of the population.
 
 **Old Mittelstand**: The old middle class consists of independent artisans, shopkeepers, and small-time businesspeople. They tend to be conservative and are the strongest base for the far right. 10-15% of the population.
 
@@ -129,7 +129,7 @@ go-to: menu
 
 **Catholics** are the largest religious minority, at about 30% of the population. They disproportionately support the Center Party (or the Bavarian People's Party in Bavaria).
 
-**Jews** account for between 0.5% to 1% of the population, and tend to support liberal parties, mostly the LPC, although substantial numbers support the CCF or PCC.
+**Jews** account for between 0.5% to 1% of the population, and tend to support liberal parties, mostly the LPC, although substantial numbers support the CCF or CP.
 
 
 @public_opinion
@@ -166,7 +166,7 @@ CCF: [+ ccf_votes +]%
 RPC + BVP: [+ rpc_votes +]%
 
 # 1928: 10, 1930: 13
-PCC: [+ pcc_votes +]%
+CP: [+ cp_votes +]%
 
 # 1928: 5, 1930: 4 (as DstP)
 [+ lpc_name +]: [+ lpc_votes +]%
@@ -185,51 +185,51 @@ Others: [+ other_votes +]%
 
 **Detailed results for each demographic**
 
-Workers: CCF: [+ workers_ccf_display +]%, RPC: [+ workers_rpc_display +]%, PCC: [+ workers_pcc_display +]%, [+ lpc_name +]: [+ workers_lpc_display +]%, CPC: [+ workers_cpc_display +]%; SCP: [+ workers_scp_display +]%, NSDAP: [+ workers_nsdap_display +]%, Others: [+ workers_other_display +]% [? if sapd_formed: SAPD: [+ workers_sapd_display +]% ?]
+Workers: CCF: [+ workers_ccf_display +]%, RPC: [+ workers_rpc_display +]%, CP: [+ workers_cp_display +]%, [+ lpc_name +]: [+ workers_lpc_display +]%, CPC: [+ workers_cpc_display +]%; SCP: [+ workers_scp_display +]%, NSDAP: [+ workers_nsdap_display +]%, Others: [+ workers_other_display +]% [? if sapd_formed: SAPD: [+ workers_sapd_display +]% ?]
 
-New Middle Class: CCF: [+ new_middle_ccf_display +]%, RPC: [+ new_middle_rpc_display +]%, PCC: [+ new_middle_pcc_display +]%, [+ lpc_name +]: [+ new_middle_lpc_display +]%, CPC: [+ new_middle_cpc_display +]%; SCP: [+ new_middle_scp_display +]%, NSDAP: [+ new_middle_nsdap_display +]%, Others: [+ new_middle_other_display +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_display +]% ?]
+New Middle Class: CCF: [+ new_middle_ccf_display +]%, RPC: [+ new_middle_rpc_display +]%, CP: [+ new_middle_cp_display +]%, [+ lpc_name +]: [+ new_middle_lpc_display +]%, CPC: [+ new_middle_cpc_display +]%; SCP: [+ new_middle_scp_display +]%, NSDAP: [+ new_middle_nsdap_display +]%, Others: [+ new_middle_other_display +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_display +]% ?]
 
-Old Middle Class: CCF: [+ old_middle_ccf_display +]%, RPC: [+ old_middle_rpc_display +]%, PCC: [+ old_middle_pcc_display +]%, [+ lpc_name +]: [+ old_middle_lpc_display +]%, CPC: [+ old_middle_cpc_display +]%; SCP: [+ old_middle_scp_display +]%, NSDAP: [+ old_middle_nsdap_display +]%, Others: [+ old_middle_other_display +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]
+Old Middle Class: CCF: [+ old_middle_ccf_display +]%, RPC: [+ old_middle_rpc_display +]%, CP: [+ old_middle_cp_display +]%, [+ lpc_name +]: [+ old_middle_lpc_display +]%, CPC: [+ old_middle_cpc_display +]%; SCP: [+ old_middle_scp_display +]%, NSDAP: [+ old_middle_nsdap_display +]%, Others: [+ old_middle_other_display +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]
 
-Rural: CCF: [+ rural_ccf_display +]%, RPC: [+ rural_rpc_display +]%, PCC: [+ rural_pcc_display +]%, [+ lpc_name +]: [+ rural_lpc_display +]%, CPC: [+ rural_cpc_display +]%; SCP: [+ rural_scp_display +]%, NSDAP: [+ rural_nsdap_display +]%, Others: [+ rural_other_display +]% [? if sapd_formed: SAPD: [+ rural_sapd_display +]% ?]
+Rural: CCF: [+ rural_ccf_display +]%, RPC: [+ rural_rpc_display +]%, CP: [+ rural_cp_display +]%, [+ lpc_name +]: [+ rural_lpc_display +]%, CPC: [+ rural_cpc_display +]%; SCP: [+ rural_scp_display +]%, NSDAP: [+ rural_nsdap_display +]%, Others: [+ rural_other_display +]% [? if sapd_formed: SAPD: [+ rural_sapd_display +]% ?]
 
-Unemployed: CCF: [+ unemployed_ccf_display +]%, RPC: [+ unemployed_rpc_display +]%, PCC: [+ unemployed_pcc_display +]%, [+ lpc_name +]: [+ unemployed_lpc_display +]%, CPC: [+ unemployed_cpc_display +]%; SCP: [+ unemployed_scp_display +]%, NSDAP: [+ unemployed_nsdap_display +]%, Others: [+ unemployed_other_display +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]
+Unemployed: CCF: [+ unemployed_ccf_display +]%, RPC: [+ unemployed_rpc_display +]%, CP: [+ unemployed_cp_display +]%, [+ lpc_name +]: [+ unemployed_lpc_display +]%, CPC: [+ unemployed_cpc_display +]%; SCP: [+ unemployed_scp_display +]%, NSDAP: [+ unemployed_nsdap_display +]%, Others: [+ unemployed_other_display +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]
 
-Catholics: CCF: [+ catholics_ccf_display +]%, RPC: [+ catholics_rpc_display +]%, PCC: [+ catholics_pcc_display +]%, [+ lpc_name +]: [+ catholics_lpc_display +]%, CPC: [+ catholics_cpc_display +]%; SCP: [+ catholics_scp_display +]%, NSDAP: [+ catholics_nsdap_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
+Catholics: CCF: [+ catholics_ccf_display +]%, RPC: [+ catholics_rpc_display +]%, CP: [+ catholics_cp_display +]%, [+ lpc_name +]: [+ catholics_lpc_display +]%, CPC: [+ catholics_cpc_display +]%; SCP: [+ catholics_scp_display +]%, NSDAP: [+ catholics_nsdap_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
 
 @parties
 go-to: menu
 
-**CCF** - *Sozialdemokratische Partei Deutschlands* (Social Democratic Party of Canada) - this is us. We are a socialist and democratic party of the working class. We are the heirs of the legacy of Marx and Engels, Lassalle and Bebel. We are the foremost defenders of the Republic. The modern CCF was formed from a merger of the "Majority" CCF, which supported the Great War, and the "Independent" CCF or UCCF, which opposed the war.
+**CCF** - *Co-operative Commonwealth Federation* - this is us. We are a multi-faceted socialist party, home to agrarian populists, radical labour members, and social gospelers. We are the foremost representative of those struck down by the capitalist system. 
 
-**RPC** - *RPCspartei* (Center Party) - a centrist to center-right Catholic party that supports the Republic, and has historically supported many of our labor, welfare, and anti-militarist priorities. They have often been in coalitions with us. They are often associated with the **BVP** (Bavarian People's Party), which represents Catholics in Bavaria. [? if year >= 1930 or prime_minister = "Brüning" : They have appeared to take a more conservative turn recently, with the rise of Brüning and the party leader, Ludwig Kaas. ?]
+**RPC** - *Reconstruction Party*  - An offshoot of the Conservatives, the RPC is a center-right party that supports moderate economic reform and increased social spending, but within the confines of capitalism. 
 
 Current relations: [+ rpc_relation : relationships +]
 
 # TODO: replace this with the german state party after 1930
-**LPC** - *Deutsche Demokratische Partei* (Canadian Democratic Party) - a center-left liberal party, popular among the intelligensia and educated middle class. They have often been in coalitions with us. [? if year >= 1930 : They have recently reformed themselves as the Canadian State Party (DStP). ?]
+**LPC** - *Liberal Party* - a center-left big tent liberal party, popular among the intelligensia and educated middle class. They are proponents of free trade. They are one of the 2 dominant parties of the Canadian parliament. 
 
 Current relations: [+ lpc_relation : relationships +]
 
-**CPC** - *Deutsche Volkspartei* (Canadian People's Party) - a conservative-liberal party, supported by the middle classes and bourgeoisie. We have occasionally been in coalitions.
+**CPC** - *Conservative Party* - a conservative-liberal party, supported by the middle classes and bourgeoisie. They are more isolationist. They are the other dominant party of the Canadian parliament. 
 
 Current relations: [+ cpc_relation : relationships +]
 
-**SCP** - *Deutschnationale Volkspartei* (Canadian National People's Party) - a right-wing nationalist-conservative party, with authoritarian, monarchist, and racist elements. It is supported by the former aristocracy, rural landowners, and conservative Lutherans.
+**SCP** - *Social Credit Party* - a recently emerged right-wing populist party advocating for social credit reforms of the monetary system. They see much support in the province of Alberta. 
 
 Current relations: [+ scp_relation : relationships +]
 
-**PCC** - *Kommunistische Partei Deutschlands* (Canadian Communist Party) - a radical left-wing offshoot of the CCF that emerged in the aftermath of the Canadian Revolution of 1918, they follow the path of Moscow, opposing parliamentary democracy in favor of a Soviet-style revolution.
+**CP** - *Communist Party* - A far-Left revolutionary party aiming to overthrow capitalism and establish a dictatorship of the proletariat. They are supported by a minority of the working class, and are heavily repressed by the government.
 
-Current relations: [+ pcc_relation : relationships +]
+Current relations: [+ cp_relation : relationships +]
 
-[? if sapd_formed: SAPD - Sozialistische Arbeiterpartei Deutschlands (Socialist Worker's Party of Canada) - a party recently formed in a split from the CCF, the SAPD is essentially an agglomeration of various left-wing splinter groups between the CCF and PCC. ?]
+[? if sapd_formed: SAPD - Sozialistische Arbeiterpartei Deutschlands (Socialist Worker's Party of Canada) - a party recently formed in a split from the CCF, the SAPD is essentially an agglomeration of various left-wing splinter groups between the CCF and CP. ?]
 
 **NSDAP** - *Nationalsozialistische Deutsche Arbeiterpartei* - (National Socialist Canadian Worker's Party, or Nazis) - a far-right nationalist and antisemitic party. Led by Adolf Hitler, they attempted a coup in 1923, and were banned for it, but have since been legalized.
 
 Current relations: [+ nsdap_relation : relationships +]
 
-**Other parties** - there is a multitude of small, mostly conservative parties, such as the Economic Party of the Canadian Middle Class, the Farmer's Party, the Agricultural League, and others. Their political position usually lies between the CPC and SCP. 
+**Other parties** - there is a multitude of small parties, including the United Farmers parties. There are also independent Liberal, Progressive, and Conservative candidates who have not been nominated yet support the parties' positions.
 
 @paramilitaries
 on-arrival: {!
@@ -241,13 +241,13 @@ go-to: menu
 
 **Paramilitary groups:**
 
-**Reichsbanner Schwarz-Rot-Gold**: The Reichsbanner is an organization affiliated with all of the democratic parties - the CCF, RPC, and LPC, but primarily with the CCF. Historically, this has been an unarmed organization.
+**Reichsbanner Schwarz-Rot-Gold**: There are various farmer's organizations in Canada, mainly acting as wheat pool cooperatives. They have are represented by the agrarian wing of our party.
 
 Strength: [+ rb_strength +] thousand
 
 Militarization: [+ rb_militancy : militancy +]
 
-**Rotfrontkämpferbund (RFB)**: The "Red Front Fighter's League" is associated with the PCC.
+**Rotfrontkämpferbund (RFB)**: The "Red Front Fighter's League" is associated with the CP.
 
 Strength: [+ rfb_strength +] thousand
 
@@ -286,7 +286,7 @@ Overall dissent: [+ dissent_percent : dissent +]
 
 **Left**
 
-Many leftists are former members of the UCCF (the left-wing, anti-war Independent Social Democratic Party), or are young radicals. Many are interested in closer cooperation with the PCC, and some support extraparliamentary action.
+Many leftists are former members of the UCCF (the left-wing, anti-war Independent Social Democratic Party), or are young radicals. Many are interested in closer cooperation with the CP, and some support extraparliamentary action.
 
 Strength: [+ left_strength : strength +]
 
@@ -335,10 +335,10 @@ on-arrival: rpc_minus_bvp_r = rpc_r - 3;
 on-display: {!
 data = [
     {
-        "id": "pcc",
-        "legend": "PCC",
-        "name": "PCC",
-        "seats": Q.pcc_r*5,
+        "id": "cp",
+        "legend": "CP",
+        "name": "CP",
+        "seats": Q.cp_r*5,
     }];
 if (Q.sapd_formed && Q.sapd_r) {
     data.push({
@@ -416,8 +416,8 @@ if (d3 && window) {
 
     var lines = d3.linegraph(false, false,
             Q.parties,
-            {'ccf': '#D26E28', 'pcc': '#8B0000', 'lpc': '#BE0028', 'rpc': '#E7DB73', 'cpc': '#0055A5', 'scp': '#50E23D', 'nsdap': '#954B00', 'other': '#a0a0a0', 'sapd': '#c40000'},
-            {'ccf': 'CCF', 'pcc': 'PCC', 'lpc': Q.lpc_name, 'rpc': 'RPC + BVP', 'cpc': 'CPC', 'scp': 'SCP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD'});
+            {'ccf': '#D26E28', 'cp': '#8B0000', 'lpc': '#BE0028', 'rpc': '#E7DB73', 'cpc': '#0055A5', 'scp': '#50E23D', 'nsdap': '#954B00', 'other': '#a0a0a0', 'sapd': '#c40000'},
+            {'ccf': 'CCF', 'cp': 'CP', 'lpc': Q.lpc_name, 'rpc': 'RPC + BVP', 'cpc': 'CPC', 'scp': 'SCP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD'});
     lines.width(width).height(400);
     //var svg = lines(Q.election_records);
     if (Q.election_records.length > 0) {
@@ -429,8 +429,8 @@ if (d3 && window) {
     if (!Q.historical_mode || Q.game_over) {
         var lines_2 = d3.linegraph(true, true,
             Q.parties,
-            {'ccf': '#D26E28', 'pcc': '#8B0000', 'lpc': '#BE0028', 'rpc': '#E7DB73', 'cpc': '#0055A5', 'scp': '#50E23D', 'nsdap': '#954B00', 'other': '#a0a0a0', 'sapd': '#c40000'},
-            {'ccf': 'CCF', 'pcc': 'PCC', 'lpc': Q.lpc_name, 'rpc': 'RPC + BVP', 'cpc': 'CPC', 'scp': 'SCP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD'});
+            {'ccf': '#D26E28', 'cp': '#8B0000', 'lpc': '#BE0028', 'rpc': '#E7DB73', 'cpc': '#0055A5', 'scp': '#50E23D', 'nsdap': '#954B00', 'other': '#a0a0a0', 'sapd': '#c40000'},
+            {'ccf': 'CCF', 'cp': 'CP', 'lpc': Q.lpc_name, 'rpc': 'RPC + BVP', 'cpc': 'CPC', 'scp': 'SCP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD'});
         lines_2.width(width).height(400);
         d3.select("#party_support_history").datum(Q.party_support_records).call(lines_2);
     }
@@ -456,7 +456,7 @@ if (d3 && window) {
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div></td> <td> !}SAPD: {!</td><td>!} [+ sapd_r +]% {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#8B0000'> </div></td> <td>!}PCC: {!</td><td>!} [+ pcc_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#8B0000'> </div></td> <td>!}CP: {!</td><td>!} [+ cp_r +]% {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#BE0028'> </div></td><td>!} [+ lpc_name +]: {!</td><td>!} [+ lpc_r +]% {!</td></tr>!}
 

@@ -93,9 +93,9 @@ Woodsworth has been removed as an advisor. The Reformist faction disapproves.
 
 @remove_macphail
 title: Remove Macphail
-view-if: juchacrpc_advisor = 1
+view-if: macphail_advisor = 1
 tags: remove_advisor
-on-arrival: juchacrpc_advisor = 0; reformist_dissent += 5; n_advisors -= 1
+on-arrival: macphail_advisor = 0; reformist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
 Macphail has been removed as an advisor. The Reformist faction disapproves.
@@ -409,8 +409,8 @@ title: Agnes Macphail
 subtitle: Agnes Macphail is the founder of Worker's Welfare, a mutual-aid organization. {!<br><br>!}[? if difficulty < 0 : Actions - Emergency Fundraising, Worker's Welfare, Organizing Women ?]
 is-card: true
 card-image: img/portraits/MacphailAgnes.jpg
-view-if: juchacrpc_advisor = 0 and n_advisors < 3
-on-arrival: juchacrpc_advisor = 1; n_advisors += 1; reformist_strength += 5
+view-if: macphail_advisor = 0 and n_advisors < 3
+on-arrival: macphail_advisor = 1; n_advisors += 1; reformist_strength += 5
 go-to: advisor_menu
 tags: reformist_advisor
 
@@ -434,7 +434,7 @@ Robert Connell is now an advisor.
 
 @add_knowles
 title: Stanley Knowles
-subtitle: Stanley Knowles is a former PCC leader who was purged for criticizing Communist policies. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the PCC ?]
+subtitle: Stanley Knowles is a former CP leader who was purged for criticizing Communist policies. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the CP ?]
 is-card: true
 card-image: img/portraits/KnowlesStanley.jpg
 view-if: knowles_advisor = 0 and knowles_dead = 0 and n_advisors < 3 and left_split = 0
@@ -448,7 +448,7 @@ Stanley Knowles is now an advisor.
 title: Laura Jamieson
 subtitle: Laura Jamieson is an anti-war and womens' rights advocate, and Reichstag member. {!<br><br>!}[? if difficulty < 0 : Actions - Left-Center Unity, Organizing Women, Against Toleration, Addressing the Economic Crisis ?]
 is-card: true
-card-image: img/portraits/JamiesonLaura.jpg
+card-image: img/portraits/JamiesonLaura.jpeg
 view-if: jamieson_advisor = 0 and n_advisors < 3
 on-arrival: jamieson_advisor = 1; n_advisors += 1; left_strength += 5
 go-to: advisor_menu
@@ -458,7 +458,7 @@ Laura Jamieson is now an advisor.
 
 @add_winch
 title: Ernest Winch
-subtitle: Ernest Winch is a lawyer, anti-militarist activist, and Reichstag member. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the PCC, Against Toleration ?]
+subtitle: Ernest Winch is a lawyer, anti-militarist activist, and Reichstag member. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the CP, Against Toleration ?]
 is-card: true
 card-image: img/portraits/WinchErnest.jpg
 view-if: winch_advisor = 0 and n_advisors < 3 and left_split = 0
@@ -484,7 +484,7 @@ William Irvine is now an advisor.
 title: Dorise Nielsen
 subtitle: Dorise Nielsen is an and educational reform advocate and pacifist, who was one of the few Canadian women to receive a PhD in the pre-war period. {!<br><br>!}[? if difficulty < 0 : Actions - Rally for Pacifism, Educational Curriculum, Educational Structure ?]
 is-card: true
-card-image: img/portraits/NielsonDorise.jpg
+card-image: img/portraits/NielsenDorise.jpg
 view-if: nielsen_advisor = 0 and n_advisors < 3 and left_split = 0
 on-arrival: nielsen_advisor = 1; n_advisors += 1; left_strength += 5
 go-to: advisor_menu
@@ -590,7 +590,7 @@ Julius Leber is now an advisor.
 title: Percy Wright
 subtitle: Percy Wright is one of the few agricultural policy experts in the CCF. {!<br><br>!}[? if difficulty < 0 : Actions - Agricultural Policy, Rural Campaigning, Addressing the Economic Crisis ?]
 is-card: true
-card-image: img/portraits/WrightFritz.jpg
+card-image: img/portraits/WrightPercy.jpg
 view-if: wright_advisor = 0 and n_advisors < 3
 on-arrival: wright_advisor = 1; n_advisors += 1
 go-to: advisor_menu
@@ -628,7 +628,7 @@ Frank Underhill is now an advisor.
 
 @add_spry
 title: Graham Spry
-subtitle: Graham Spry is the long-time editor-in-chief of Vorwärts, our party newspaper. {!<br><br>!}[? if difficulty < 0 : Actions - Media, Editorial Line, Cooperation with the PCC ?]
+subtitle: Graham Spry is the long-time editor-in-chief of Vorwärts, our party newspaper. {!<br><br>!}[? if difficulty < 0 : Actions - Media, Editorial Line, Cooperation with the CP ?]
 is-card: true
 card-image: img/portraits/SpryGraham.jpg
 view-if: spry_advisor = 0 and n_advisors < 3

@@ -1,13 +1,13 @@
 title: The Right calls a vote of no confidence against the current government!
 subtitle: We have angered our coalition partners too much...
 new-page: true
-on-arrival: tried_supporting_pcc = 0
+on-arrival: tried_supporting_cp = 0
 view-if: ccf_in_government = 1 and ((in_grand_coalition = 1 or in_popular_front = 1 or in_minority_government = 1) and coalition_dissent >= 3) or (in_weimar_coalition = 1 and coalition_dissent >= 4) and ccf_r < 50 and not constructive_vonc
 tags: event
 go-to: vonc_menu
 
-# Options: spend relations to reduce coalition_dissent, ask for pcc to abstain
-# (lmao PCC toleration arc...)
+# Options: spend relations to reduce coalition_dissent, ask for cp to abstain
+# (lmao CP toleration arc...)
 
 = Vote of No Confidence
 
@@ -16,7 +16,7 @@ go-to: vonc_menu
 @vonc_menu
 
 - @try_assuage: Try to assuage our partners.
-- @support_pcc: Could we get the PCC to abstain?
+- @support_cp: Could we get the CP to abstain?
 - @let_it_happen: Let the vote happen.
 
 @try_assuage
@@ -26,7 +26,7 @@ How do we assuage our partners?
 - @give_up_prussia: Give up on leadership of Prussia.
 - @austerity: Enact a massive austerity plan.
 - @resources: Use our resources to reduce dissent within the coalition.
-- @support_pcc: Could we get the PCC to abstain?
+- @support_cp: Could we get the CP to abstain?
 - @let_it_happen: Never mind. Let the vote happen.
 
 @give_up_prussia
@@ -37,7 +37,7 @@ Fine. We no longer control the government of Prussia. The vote has been called o
 
 @austerity
 view-if: welfare >= 0 and not secularized
-on-arrival: coalition_dissent = 0; workers_ccf -= 10; unemployed_ccf -= 10; workers_pcc += 7; workers_nsdap += 3; unemployed_pcc += 5; unemployed_nsdap += 5; left_dissent += 15; center_dissent += 10; labor_dissent += 15; reformist_dissent += 5; welfare -= 2; budget += 1; unemployed += 3; pcc_coalition_dissent += 1; pcc_relation -= 10 if in_popular_front
+on-arrival: coalition_dissent = 0; workers_ccf -= 10; unemployed_ccf -= 10; workers_cp += 7; workers_nsdap += 3; unemployed_cp += 5; unemployed_nsdap += 5; left_dissent += 15; center_dissent += 10; labor_dissent += 15; reformist_dissent += 5; welfare -= 2; budget += 1; unemployed += 3; cp_coalition_dissent += 1; cp_relation -= 10 if in_popular_front
 
 Fine. We enacted a massive austerity program to cut welfare, in order to maintain the stability of our coalition. The vote has been called off.
 
@@ -50,32 +50,32 @@ on-arrival: resources -= 3; coalition_dissent -= 1;
 
 By transferring resources to our coalition partners, we can reduce their dissent against our policies. This is a crude, but effective solution.
 
-@support_pcc
-choose-if: (in_grand_coalition and communist_coalition >= 3 and pcc_relation >= 50 and pcc_r >= cpc_r) or (in_weimar_coalition and pcc_relation >= 50 and pcc_r >= rpc_r and communist_coalition >= 3)
-view-if: tried_supporting_pcc = 0
-on-arrival: tried_supporting_pcc = 1
-unavailable-subtitle: [? if communist_coalition < 3 : The PCC won't take part in parliamentary government. ?] [? if pcc_relation < 50 : The PCC is not friendly enough with us. ?] [? if (in_grand_coalition and pcc_r < cpc_r) or (in_weimar_coalition and pcc_r < rpc_r): The PCC does not have enough votes. ?] [? if in_popular_front : We are already in a Popular Front with the PCC. ?]
+@support_cp
+choose-if: (in_grand_coalition and communist_coalition >= 3 and cp_relation >= 50 and cp_r >= cpc_r) or (in_weimar_coalition and cp_relation >= 50 and cp_r >= rpc_r and communist_coalition >= 3)
+view-if: tried_supporting_cp = 0
+on-arrival: tried_supporting_cp = 1
+unavailable-subtitle: [? if communist_coalition < 3 : The CP won't take part in parliamentary government. ?] [? if cp_relation < 50 : The CP is not friendly enough with us. ?] [? if (in_grand_coalition and cp_r < cpc_r) or (in_weimar_coalition and cp_r < rpc_r): The CP does not have enough votes. ?] [? if in_popular_front : We are already in a Popular Front with the CP. ?]
 
-If the Communists abstain, then we essentially can maintain a minority government[? if monarch=="George V":, although it would be very difficult to make policy without the support of Monarch George V, which we do not have ?]. If this happens, then we will own a massive debt to the PCC. This could lead to broader cooperation in the future, for better or for worse.
+If the Communists abstain, then we essentially can maintain a minority government[? if monarch=="George V":, although it would be very difficult to make policy without the support of Monarch George V, which we do not have ?]. If this happens, then we will own a massive debt to the CP. This could lead to broader cooperation in the future, for better or for worse.
 
-- @support_pcc_2: Persuade the PCC to "tolerate" us?
+- @support_cp_2: Persuade the CP to "tolerate" us?
 - @let_it_happen: Never mind. Let the vote happen.
 
-@support_pcc_2
-on-arrival: communist_coalition += 1; workers_pcc += 3; pcc_relation += 5
-go-to: support_pcc_weimar if in_weimar_coalition; support_pcc_grand if in_grand_coalition
+@support_cp_2
+on-arrival: communist_coalition += 1; workers_cp += 3; cp_relation += 5
+go-to: support_cp_weimar if in_weimar_coalition; support_cp_grand if in_grand_coalition
 
 # TODO: this can form an infinite loop
 
-The PCC is not interested in a "toleration" arrangement; they will only support us if they can participate in the government as part of a coalition. And, if this toleration agreement happens, the right-wing parties will not be inclined to support us. 
+The CP is not interested in a "toleration" arrangement; they will only support us if they can participate in the government as part of a coalition. And, if this toleration agreement happens, the right-wing parties will not be inclined to support us. 
 
-@support_pcc_grand
+@support_cp_grand
 
 - @election_1928.popular_front_coalition: Form a "Popular Front" coalition?
 - @election_1928.left_coalition
 - @try_assuage: Never mind. We must deal with this some other way.
 
-@support_pcc_weimar
+@support_cp_weimar
 
 - @election_1928.left_coalition
 - @try_assuage: Never mind. We must deal with this some other way.

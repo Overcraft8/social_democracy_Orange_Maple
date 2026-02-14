@@ -2,7 +2,7 @@ title: Agnes Macphail
 is-pinned-card: true
 tags: advisor, reformist
 card-image: img/portraits/MacphailAgnes.jpg
-view-if: juchacrpc_advisor = 1
+view-if: macphail_advisor = 1
 new-page: true 
 
 = Agnes Macphail

@@ -1,26 +1,26 @@
-title: PCC Party Conference
-subtitle: The PCC chooses their new central committee - will the Wittorf Affair have an influence on their choice?
+title: CP Party Conference
+subtitle: The CP chooses their new central committee - will the Wittorf Affair have an influence on their choice?
 new-page: true
-view-if: pcc_relation >= 50 and wittorf_soviet_union = 1 and year = 1929 and month >= 6 and month <= 8
+view-if: cp_relation >= 50 and wittorf_soviet_union = 1 and year = 1929 and month >= 6 and month <= 8
 max-visits: 1
-on-arrival: pcc_party_conference_seen = 1
+on-arrival: cp_party_conference_seen = 1
 tags: event
 
-= PCC Party Conference
+= CP Party Conference
 
-Now is the PCC's national party conference, where they will choose their new leadership. The shadow of the Wittorf Affair hangs over it. On one hand are the hardline supporters of Thälmann, who support a "social fascist" policy that places the CCF as equivalent to the Nazis. On the other hand is the "Conciliator" faction, who support a more cooperative policy towards the CCF.
+Now is the CP's national party conference, where they will choose their new leadership. The shadow of the Wittorf Affair hangs over it. On one hand are the hardline supporters of Thälmann, who support a "social fascist" policy that places the CCF as equivalent to the Nazis. On the other hand is the "Conciliator" faction, who support a more cooperative policy towards the CCF.
 
-After our discussion with the Soviets, we are inclined to believe that Stalin is at least open to the Conciliators. In order to affect the PCC's leadership elections, we have to influence both the Comintern leaders as as well as the PCC membership.
+After our discussion with the Soviets, we are inclined to believe that Stalin is at least open to the Conciliators. In order to affect the CP's leadership elections, we have to influence both the Comintern leaders as as well as the CP membership.
 
 - @conciliator_success
 - @conciliator_fail
 
 
 @conciliator_success
-title: The Conciliators are the new leadership of the PCC.
-choose-if: (knowles_advisor or winch_advisor) and (left_strength >= reformist_strength) and (pcc_relation >= 50) 
+title: The Conciliators are the new leadership of the CP.
+choose-if: (knowles_advisor or winch_advisor) and (left_strength >= reformist_strength) and (cp_relation >= 50) 
 unavailable-subtitle: [?  if not knowles_advisor and not winch_advisor: Our party leadership is not left-wing enough. ?] [? if left_strength < reformist_strength: The Comintern doubts our commitment to socialism. ?]
-on-arrival: pcc_party_leader = "Conciliators"; communist_coalition += 3; pcc_relation += 10*(1-dissent); left_strength += 5; left_dissent -= 8
+on-arrival: cp_party_leader = "Conciliators"; communist_coalition += 3; cp_relation += 10*(1-dissent); left_strength += 5; left_dissent -= 8
 achievement: versohnler
 
 With our support, the Conciliators have won the leadership contest! The new leadership is a group of Conciliators, including Arthur Ewert, Hugo Eberlein, and Ernst Meyer. Thälmann remains, but largely as a figurehead only, it seems. We hope that the new leadership will be more inclined towards cooperation.
@@ -29,4 +29,4 @@ With our support, the Conciliators have won the leadership contest! The new lead
 @conciliator_fail
 title: Thälmann retains his leadership position.
 
-Unfortunately, we could not influence the PCC leadership election against the hardliners. Thälmann quickly moves to consolidate absolute leadership, expelling or exiling his opponents.
+Unfortunately, we could not influence the CP leadership election against the hardliners. Thälmann quickly moves to consolidate absolute leadership, expelling or exiling his opponents.
