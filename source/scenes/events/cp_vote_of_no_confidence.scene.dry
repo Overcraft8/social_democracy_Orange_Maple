@@ -20,15 +20,15 @@ The CP has called a vote of no confidence against us, due to our various policie
 How do we assuage the CP?
 
 - @resources: Use our resources to reduce dissent within the coalition.
-- @thalmann: Appoint Thälmann as prime_minister instead of [+ prime_minister +].
+- @tim buck: Appoint Tim Buck as prime_minister instead of [+ prime_minister +].
 - @support_center: Could we form a new government?
 - @let_it_happen: Never mind. Let the vote happen.
 
-@thalmann
-choose-if: monarch == "Woodsworth"
+@tim buck
+choose-if: monarch == "J. S. Woodsworth"
 subtitle: This would be pretext for a right-wing coup.
 unavailable-subtitle: [? if monarch == "George V" : Monarch George V would never allow this. ?]
-on-arrival: prime_minister = "Thälmann"; prime_minister_party = "CP"
+on-arrival: prime_minister = "Tim Buck"; prime_minister_party = "CP"
 
 With great reluctance, Monarch [+ monarch +] appoints [+ prime_minister +] as prime_minister.
 
@@ -63,9 +63,9 @@ We could try to boot the CP from our governing coalition, and form a new governm
 @let_it_happen
 view-if: not constructive_vonc
 on-arrival: cp_relation -= 8; workers_cp -= 5; workers_ccf -= 8; unemployed_ccf -= 6
-go-to: let_it_happen_woodsworth if monarch = "Woodsworth"; let_it_happen_georgev if monarch = "George V"
+go-to: let_it_happen_woodsworth if monarch = "J. S. Woodsworth"; let_it_happen_georgev if monarch = "George V"
 
-# if Woodsworth is monarch, we are now a caretaker government. If George V is monarch, Brüning is a caretaker government
+# if J. S. Woodsworth is monarch, we are now a caretaker government. If George V is monarch, Brüning is a caretaker government
 
 @let_it_happen_woodsworth
 on-arrival: next_election_time = time + 3 if next_election_time >= time + 3; next_election_month = month + 3 if next_election_time >= time + 3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; ccf_in_government = 0; in_popular_front = 0; in_left_front = 0; foreign_minister_party = "I"; interior_minister_party = "I"; justice_minister_party = "I"; labor_minister_party = "I"; reichswehr_minister_party = "I"; economic_minister_party = "I"; finance_minister_party = "I"; agriculture_minister_party = "I";

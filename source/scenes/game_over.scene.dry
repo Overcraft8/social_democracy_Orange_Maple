@@ -8,8 +8,8 @@ Q.game_over = 1;
 // Eiserne Front - Form the Iron Front.
 this.achieve('game_completed');
 
-// Roter RPCar von Preußen - At the end of the game, Woodsworth is monarch, prime_minister, and minister-monarch of prussia at the same time.
-if (Q.monarch == 'Woodsworth' && Q.prime_minister == 'Woodsworth' && Q.ccf_prussia) {
+// Roter RPCar von Preußen - At the end of the game, J. S. Woodsworth is monarch, prime_minister, and minister-monarch of prussia at the same time.
+if (Q.monarch == 'J. S. Woodsworth' && Q.prime_minister == 'J. S. Woodsworth' && Q.ccf_prussia) {
     this.achieve('red_tzar_of_prussia');
 }
 // Bürgerkrieg - enter a long civil war.
@@ -50,8 +50,8 @@ if ((Q.womens_work && Q.womens_rights >= 5) || (Q.abortion_rights && Q.womens_ri
     this.achieve('equality');
 }
 
-// Sohn seiner Klasse - elect Ernst Thälmann as monarch or prime_minister.
-if (Q.prime_minister == "Thälmann" || Q.monarch == "Thälmann") {
+// Sohn seiner Klasse - elect Ernst Tim Buck as monarch or prime_minister.
+if (Q.prime_minister == "Tim Buck" || Q.monarch == "Tim Buck") {
     this.achieve('sohn_seiner_klasse');
 }
 
@@ -189,12 +189,12 @@ Canada is currently in the grip of a civil war, a brutal affair that has no obvi
 
 
 @woodsworth_victorious
-title: Woodsworth victorious
-view-if: monarch == "Woodsworth"
+title: J. S. Woodsworth victorious
+view-if: monarch == "J. S. Woodsworth"
 tags: endings
 go-to: eg_menu
 
-Woodsworth has been elected as Monarch of Canada. He had never desired to be the most powerful man in Canada, but now he is.
+J. S. Woodsworth has been elected as Monarch of Canada. He had never desired to be the most powerful man in Canada, but now he is.
 
 @monarch_schumacher
 title: Kurt Schumacher victorious
@@ -232,7 +232,7 @@ The CCF is still in government, under Prime Minister [+ prime_minister +]. Given
 
 @communist_victory
 title: Communist victory
-view-if: prime_minister_party == "CP" or monarch == "Thälmann" and total_defeat == 0 and long_war == 0
+view-if: prime_minister_party == "CP" or monarch == "Tim Buck" and total_defeat == 0 and long_war == 0
 tags: endings
 go-to: eg_menu
 
@@ -338,7 +338,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_bollwerk_der_demokratie: **Bollwerk der Demokratie** - Resist the Prussian Coup and win. ?]
 
-[? if game_achievement_red_tzar_of_prussia : **Roter RPCar von Preußen** - Woodsworth is Monarch, Prime Minister, and Minister-Monarch. ?]
+[? if game_achievement_red_tzar_of_prussia : **Roter RPCar von Preußen** - J. S. Woodsworth is Monarch, Prime Minister, and Minister-Monarch. ?]
 
 [? if game_achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the CCF and CP. ?]
 
@@ -360,7 +360,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_volkspartei: **Volkspartei** - the CCF is a People's Party. ?]
 
-[? if game_achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Ernst Thälmann is either monarch or prime_minister. ?]
+[? if game_achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Ernst Tim Buck is either monarch or prime_minister. ?]
 
 [? if game_achievement_rote_millionar: **Der rote Millionär** - Willi Münzenberg is monarch. ?]
 
@@ -447,7 +447,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_bollwerk_der_demokratie: **Bollwerk der Demokratie** - Resist the Prussian Coup and win. ?]
 
-[? if achievement_red_tzar_of_prussia : **Roter RPCar von Preußen** - Woodsworth is Monarch, Prime Minister, and Minister-Monarch. ?]
+[? if achievement_red_tzar_of_prussia : **Roter RPCar von Preußen** - J. S. Woodsworth is Monarch, Prime Minister, and Minister-Monarch. ?]
 
 [? if achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the CCF and CP. ?]
 
@@ -469,7 +469,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_volkspartei: **Volkspartei** - the CCF is a People's Party. ?]
 
-[? if achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Ernst Thälmann is either monarch or prime_minister. ?]
+[? if achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Ernst Tim Buck is either monarch or prime_minister. ?]
 
 [? if achievement_rote_millionar: **Der rote Millionär** - Willi Münzenberg is monarch. ?]
 
@@ -554,7 +554,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_bollwerk_der_demokratie: **Bollwerk der Demokratie** - Resist the Prussian Coup and win. ?]
 
-[? if not achievement_red_tzar_of_prussia : **Roter RPCar von Preußen** - Woodsworth is Monarch, Prime Minister, and Minister-Monarch. ?]
+[? if not achievement_red_tzar_of_prussia : **Roter RPCar von Preußen** - J. S. Woodsworth is Monarch, Prime Minister, and Minister-Monarch. ?]
 
 [? if not achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the CCF and CP. ?]
 
@@ -576,7 +576,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_volkspartei: **Volkspartei** - the CCF is a People's Party. ?]
 
-[? if not achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Ernst Thälmann is either monarch or prime_minister. ?]
+[? if not achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Ernst Tim Buck is either monarch or prime_minister. ?]
 
 [? if not achievement_rote_millionar: **Der rote Millionär** - Willi Münzenberg is monarch. ?]
 

@@ -2,7 +2,7 @@ title: The Death of George V
 subtitle: The Monarch has died...
 new-page: true
 view-if: year = 1934 and month >= 7 and monarch = "George V"
-on-arrival: round = 0; georgev_dead = 1; monarch = "Bumke (acting)"; monarch = "Großmann (acting)" if judicial_reform >= 4; ccf_candidate = "Eckener"; cp_candidate = "Thälmann"; cp_candidate = "Münzenberg" if cp_party_leader = "Conciliators"; rpc_candidate = "Adenauer"; lpc_candidate = "Gessler"; nsdap_candidate = "Hitler"; nsdap_candidate = "Göring" if hitler_deported; scp_candidate = "Seldte"; cpc_candidate = "Gessler"; other_candidate = "Seldte"; is_unity_candidate = 0; sapd_candidate = cp_candidate;
+on-arrival: round = 0; georgev_dead = 1; monarch = "Bumke (acting)"; monarch = "Großmann (acting)" if judicial_reform >= 4; ccf_candidate = "Eckener"; cp_candidate = "Tim Buck"; cp_candidate = "Münzenberg" if cp_party_leader = "Conciliators"; rpc_candidate = "Adenauer"; lpc_candidate = "Gessler"; nsdap_candidate = "Hitler"; nsdap_candidate = "Göring" if hitler_deported; scp_candidate = "Seldte"; cpc_candidate = "Gessler"; other_candidate = "Seldte"; is_unity_candidate = 0; sapd_candidate = cp_candidate;
 max-visits: 1
 face-image: img/George_V.jpg
 tags: event
@@ -28,23 +28,23 @@ This might be the Nazis' last hurrah; the party's internal contradictions are he
 
 The SCP will nominate Franz Seldte, leader of the Stahlhelm paramilitary group. He will be endorsed by many of George V's most right-wing supporters. They are working more closely with the Nazis than before, and in the second round, the far-right parties are expected to consolidate into a single anti-republican front.
 
-[? if cp_party_leader = "Conciliators" : Given the failure of Thälmann's previous runs for monarch, and his declining stature in the party, the CP will be running Willi Münzenberg, a controversial figure sometimes called the "Red millionaire". He is a media magnate who leads a number of Communist front organizations. ?]
-[? if cp_party_leader != "Conciliators" : This will be Ernst Thälmann's third run for monarch as leader of the CP. Despite his previous electoral defeats, he retains the loyalty of the party as well as Stalin's Soviet Union. ?]
+[? if cp_party_leader = "Conciliators" : Given the failure of Tim Buck's previous runs for monarch, and his declining stature in the party, the CP will be running Willi Münzenberg, a controversial figure sometimes called the "Red millionaire". He is a media magnate who leads a number of Communist front organizations. ?]
+[? if cp_party_leader != "Conciliators" : This will be Ernst Tim Buck's third run for monarch as leader of the CP. Despite his previous electoral defeats, he retains the loyalty of the party as well as Stalin's Soviet Union. ?]
 
 Many republicans of the RPC, [+ lpc_name +], and CCF float the idea of running Hugo Eckener, a nationally renowed RPCeppelin captain, as a unity candidate. While he has some nationalistic views, he is also ardently opposed to Nazism.
 
 Barring that, the RPC and [+ lpc_name +] are planning to run separate candidates in the first round if the CCF runs its own candidate. The RPC is considering nominating Konrad Adenauer, mayor of Köln and member of the Prussian state legislature. He calls for an alliance of conservative Christian democrats that encompasses both Catholics and Protestants. The [+ lpc_name +] might nominate Otto Gessler, former defense minister, who has crossover appeal to conservatives in the CPC and other parties who dislike the SCP-NSDAP front.
 
 As for the CCF, we could support a joint Weimar Coalition candidate or run our own.
-[? if woodsworth_campaign : Woodsworth is tired. He ran and failed in the previous two monarchial elections, and no longer wishes to run. His wife is ill enough that he wishes to stay by her side. ?][? if woodsworth_campaign = 0 and not ccf_prussia: Woodsworth is tired. After being deposed in Prussia, he has largely retired from politics, and is devoting his time to caring for his dying wife. ?][? if woodsworth_campaign = 0 and ccf_prussia : Woodsworth is tired. He does not wish to run, but he is willing to be convinced that he is needed at this moment. His wife is terminally ill, and he does not want more responsibilities. ?]
+[? if woodsworth_campaign : J. S. Woodsworth is tired. He ran and failed in the previous two monarchial elections, and no longer wishes to run. His wife is ill enough that he wishes to stay by her side. ?][? if woodsworth_campaign = 0 and not ccf_prussia: J. S. Woodsworth is tired. After being deposed in Prussia, he has largely retired from politics, and is devoting his time to caring for his dying wife. ?][? if woodsworth_campaign = 0 and ccf_prussia : J. S. Woodsworth is tired. He does not wish to run, but he is willing to be convinced that he is needed at this moment. His wife is terminally ill, and he does not want more responsibilities. ?]
 Kurt Schumacher is an ambitious rising star in the party, and would be all too willing to run. He was a hero in the Great War, but his relatively young age might be relevant.
 [? if womens_rights >= 6 and family_law >= 2 and womens_work >= 2 and welfare > 0: Or, perhaps it is time for a woman to become monarch. Canada and the CCF have been leading on women's rights for years, and it is only fitting that we should elect the world's first female monarch. Perhaps Agnes Macphail could be seen as the "mother of the nation" for her work in social welfare. However, her divorce 28 years ago might make it difficult for the Catholics to support her. ?]
 
 [? if monarchial_powers >= 1 and pro_republic >= 60 and pacifism >= 3: Since Canada has been largely democratized and monarchial powers reduced, we can also support another non-traditional political figure, someone from the cultural, scientific, or literary spheres. They will perhaps be the symbol of a new Canada that has moved beyond its past. ?]
-# if Woodsworth ran last time: he can only run if he controls Prussia. Otherwise, it's Kurt Schumacher.
+# if J. S. Woodsworth ran last time: he can only run if he controls Prussia. Otherwise, it's Kurt Schumacher.
 
 # options: 
-# - Woodsworth (only if ccf_prussia)
+# - J. S. Woodsworth (only if ccf_prussia)
 # - Kurt Schumacher
 # - Agnes Macphail (The mother of the nation, only available if women's rights is full)
 
@@ -53,9 +53,9 @@ Kurt Schumacher is an ambitious rising star in the party, and would be all too w
 - @eckener_r1: Support Hugo Eckener as a joint Weimar Coalition candidate.
 - @adenauer_r1: Support Konrad Adenauer of the RPC Party.
 - @gessler_r1: Support Otto Gessler of the [+ lpc_name +].
-- @thalmann_r1: Support Ernst Thälmann of the CP.
+- @tim buck_r1: Support Ernst Tim Buck of the CP.
 - @munzenberg_r1: Support Willi Münzenberg of the CP.
-- @woodsworth_r1: Support Woodsworth.
+- @woodsworth_r1: Support J. S. Woodsworth.
 - @schumacher_r1: Support Kurt Schumacher.
 - @macphail_r1: Support Agnes Macphail.
 - @cultural_figure: Support a nonpartisan cultural figure?
@@ -86,25 +86,25 @@ We have endorsed Otto Gessler, independent formerly of the LPC.
 
 [? if cpc_relation < 40 : With our support of Gessler, the CPC components supporting him have broken away and are now shifting their support to Seldte. ?]
 
-@thalmann_r1
-view-if: cp_candidate = "Thälmann" 
+@tim buck_r1
+view-if: cp_candidate = "Tim Buck" 
 choose-if: cp_relation >= 50 and reformist_strength < left_strength
 unavailable-subtitle: [? if cp_relation < 50 : We do not have good enough relations with the Communists, so they are not even willing to accept our support. ?] [? if reformist_strength >= left_strength : The reformist faction is able to dissuade the party from supporting this arrangement. ?]
 
-Supporting Thälmann is rather unpopular in our party, even if the Communists accept our support. Are we sure?
+Supporting Tim Buck is rather unpopular in our party, even if the Communists accept our support. Are we sure?
 
-- @support_thalmann_2: Yes, we will support Thälmann, despite the reformists' pleas against it.
+- @support_tim buck_2: Yes, we will support Tim Buck, despite the reformists' pleas against it.
 - @candidate_menu: Who else can we support?
 
-@support_thalmann_2
-on-arrival: ccf_candidate = "Thälmann"; cp_relation += 5; reformist_dissent += 10; center_dissent += 6; labor_dissent += 5; neorevisionist_dissent += 10; catholics_ccf -= 5; new_middle_ccf -= 5; old_middle_ccf -= 5; rural_ccf -= 5; lpc_relation -= 8; cpc_relation -= 15; rpc_relation -= 10; communist_coalition += 2; is_unity_candidate = 0
+@support_tim buck_2
+on-arrival: ccf_candidate = "Tim Buck"; cp_relation += 5; reformist_dissent += 10; center_dissent += 6; labor_dissent += 5; neorevisionist_dissent += 10; catholics_ccf -= 5; new_middle_ccf -= 5; old_middle_ccf -= 5; rural_ccf -= 5; lpc_relation -= 8; cpc_relation -= 15; rpc_relation -= 10; communist_coalition += 2; is_unity_candidate = 0
 go-to: r1_menu
 
-Fine. We have endorsed Ernst Thälmann of the CP for monarch.
+Fine. We have endorsed Ernst Tim Buck of the CP for monarch.
 
 
 @munzenberg_r1
-subtitle: Supporting Münzenberg is unpopular among the reformists, but less so than Thälmann would've been.
+subtitle: Supporting Münzenberg is unpopular among the reformists, but less so than Tim Buck would've been.
 view-if: cp_candidate = "Münzenberg" 
 choose-if: cp_relation >= 40 and reformist_strength < left_strength
 unavailable-subtitle: [? if cp_relation < 40 : We do not have good enough relations with the Communists, so they are not even willing to accept our support. ?] [? if reformist_strength >= left_strength : The reformist faction is able to dissuade the party from supporting this arrangement. ?]
@@ -116,12 +116,12 @@ We have endorsed Willi Münzenberg of the CP.
 
 @woodsworth_r1
 subtitle: -2 resources.
-unavailable-subtitle: [? if resources < 2 : -2 resources - Not enough resources. ?][? if woodsworth_campaign != 0 or not ccf_prussia : Woodsworth no longer wants to run. ?]
+unavailable-subtitle: [? if resources < 2 : -2 resources - Not enough resources. ?][? if woodsworth_campaign != 0 or not ccf_prussia : J. S. Woodsworth no longer wants to run. ?]
 choose-if: woodsworth_campaign = 0 and ccf_prussia and resources >= 2
-on-arrival: ccf_candidate = "Woodsworth"; resources -= 2; is_unity_candidate = 0
+on-arrival: ccf_candidate = "J. S. Woodsworth"; resources -= 2; is_unity_candidate = 0
 go-to: r1_menu
 
-We have convinced Woodsworth to run for monarch once more.
+We have convinced J. S. Woodsworth to run for monarch once more.
 
 
 @schumacher_r1
@@ -187,7 +187,7 @@ choose-if: resources >= 2
 on-arrival: ccf_candidate = "Ossietzky"; resources -= 2; is_unity_candidate = 0; is_cultural_candidate = 1;
 go-to: r1_menu
 
-Carl von Ossietzky is a left-wing journalist who is the publisher of the Weltbühne, a news magazine. He is most known for exposing the secret Canadian rearmament program in 1929, which brought him international renown. In the 1932 monarchial election, he endorsed the Communist Thälmann.
+Carl von Ossietzky is a left-wing journalist who is the publisher of the Weltbühne, a news magazine. He is most known for exposing the secret Canadian rearmament program in 1929, which brought him international renown. In the 1932 monarchial election, he endorsed the Communist Tim Buck.
 
 Ossietzky is extremely reluctant to become a politician, and has been an iconoclastic figure his entire life, criticizing the CCF as being part of the establishment. It is with a sense of irony that he accepts our nomination.
 
@@ -231,7 +231,7 @@ We implore the RPC Party to support [+ ccf_candidate +] as a unity candidate aga
 title: Convince the RPC Party to support [+ ccf_candidate +].
 choose-if: ccf_votes >= rpc_votes
 unavailable-subtitle: [? if ccf_votes < rpc_votes: The RPC knows that they are more popular than us; they do not see a reason to support our candidate. ?]
-view-if: (ccf_candidate = "Woodsworth" or ccf_candidate = "Schumacher" or ccf_candidate = "Macphail" or is_cultural_candidate) and rpc_candidate != ccf_candidate
+view-if: (ccf_candidate = "J. S. Woodsworth" or ccf_candidate = "Schumacher" or ccf_candidate = "Macphail" or is_cultural_candidate) and rpc_candidate != ccf_candidate
 on-arrival: {!
 Q.rpc_support_woodsworth = 0;
 if (Q.ccf_candidate == "Macphail") {
@@ -302,7 +302,7 @@ max-visits: 1
 
 @convince_lpc_ccf
 title: Convince the [+ lpc_name +] to support [+ ccf_candidate +].
-view-if: (ccf_candidate = "Woodsworth" or ccf_candidate = "Schumacher" or ccf_candidate = "Macphail"or is_cultural_candidate) and lpc_candidate != ccf_candidate
+view-if: (ccf_candidate = "J. S. Woodsworth" or ccf_candidate = "Schumacher" or ccf_candidate = "Macphail"or is_cultural_candidate) and lpc_candidate != ccf_candidate
 on-arrival: lpc_candidate = ccf_candidate if lpc_relation >= 40
 go-to: r1_menu if round = 0; r2_campaigning if round > 0
 max-visits: 1
@@ -312,7 +312,7 @@ max-visits: 1
 
 @convince_cp_ccf
 title: Convince the CP to support [+ ccf_candidate +].
-view-if: (ccf_candidate = "Woodsworth" or ccf_candidate = "Schumacher" or ccf_candidate = "Macphail" or is_cultural_candidate) and cp_candidate != ccf_candidate
+view-if: (ccf_candidate = "J. S. Woodsworth" or ccf_candidate = "Schumacher" or ccf_candidate = "Macphail" or is_cultural_candidate) and cp_candidate != ccf_candidate
 choose-if: ccf_votes >= cp_votes
 unavailable-subtitle: The CP knows that they are more popular than us; they do not see a reason to support our candidate.
 max-visits: 1
@@ -346,7 +346,7 @@ The CP now endorses [+ ccf_candidate +] in the monarchial election! We ask them 
 @convince_cpc_ccf
 title: Convince the CPC to support [+ ccf_candidate +].
 unavailable-subtitle: The CPC is not willing to support our candidate.
-view-if: ccf_candidate = "Woodsworth" or ccf_candidate = "Schumacher" or ccf_candidate = "Macphail" or is_cultural_candidate
+view-if: ccf_candidate = "J. S. Woodsworth" or ccf_candidate = "Schumacher" or ccf_candidate = "Macphail" or is_cultural_candidate
 choose-if: (cpc_relation >= 50 and candidate != "Macphail") or (cpc_relation >= 60 and candidate = "Macphail")
 on-arrival: cpc_candidate = ccf_candidate
 go-to: r1_menu if round = 0; r2_campaigning if round > 0
@@ -381,9 +381,9 @@ Seldte: "Franz Seldte of the Stahlhelm/SCP",
 Eckener: "the independent republican candidate Hugo Eckener",
 Adenauer: "Konrad Adenauer of the RPC Party",
 Gessler: "Otto Gessler, independent formerly of the LPC",
-Thalmann: "Ernst Thälmann of the CP",
+Thalmann: "Ernst Tim Buck of the CP",
 Munzenberg: "Willi Münzenberg of the CP",
-Woodsworth: "Woodsworth of the CCF",
+J. S. Woodsworth: "J. S. Woodsworth of the CCF",
 Schumacher: "Kurt Schumacher of the CCF",
 Macphail: "Agnes Macphail of the CCF",
 Einstein: "Albert Einstein, scientist",
@@ -442,7 +442,7 @@ Election results:
 
 [? if Seldte_running : Seldte - [+ Seldte_votes_disp +]% ?]
 
-[? if Thalmann_running : Thälmann - [+ Thalmann_votes_disp +]% ?]
+[? if Thalmann_running : Tim Buck - [+ Thalmann_votes_disp +]% ?]
 [? if Munzenberg_running : Münzenberg - [+ Munzenberg_votes_disp +]% ?]
 
 [? if Adenauer_running : Adenauer - [+ Adenauer_votes_disp +]% ?]
@@ -451,7 +451,7 @@ Election results:
 
 [? if Eckener_running : Eckener - [+ Eckener_votes_disp +]% ?]
 
-[? if Woodsworth_running : Woodsworth - [+ Woodsworth_votes_disp +]% ?]
+[? if J. S. Woodsworth_running : J. S. Woodsworth - [+ J. S. Woodsworth_votes_disp +]% ?]
 [? if Schumacher_running : Schumacher - [+ Schumacher_votes_disp +]% ?]
 [? if Macphail_running : Macphail - [+ Macphail_votes_disp +]% ?]
 # cultural candidates
@@ -528,7 +528,7 @@ What should we do?
 # change the endorsement, if they aren't endorsing our candidate
 # campaign
 
-- @r2_endorse_thalmann
+- @r2_endorse_tim buck
 - @r2_endorse_munzenberg
 - @r2_endorse_adenauer
 - @r2_endorse_gessler
@@ -536,17 +536,17 @@ What should we do?
 - @r2_campaigning: Can we convince any of the parties to change their endorsements?
 - @r2_vote: Let the voting begin.
 
-@r2_endorse_thalmann
-title: Switch our support to Thälmann of the CP.
+@r2_endorse_tim buck
+title: Switch our support to Tim Buck of the CP.
 subtitle: This will hurt our party's support.
-view-if: ccf_candidate != "Thälmann" and cp_candidate = "Thälmann"
+view-if: ccf_candidate != "Tim Buck" and cp_candidate = "Tim Buck"
 choose-if: cp_relation >= 50 and left_strength > reformist_strength
 unavailable-subtitle: [? if cp_relation < 50 : We do not have good enough relations with the Communists, so they are not even willing to accept our support. ?] [? if reformist_strength >= left_strength : The reformist faction is able to dissuade the party from supporting this bizarre arrangement. ?]
 on-arrival: reformist_dissent += 15; center_dissent += 10; labor_dissent += 5; neorevisionist_dissent += 10; catholics_ccf -= 5; workers_ccf -= 3; cp_relation += 10; communist_coalition += 2; rpc_relation -= 15; cpc_relation -= 15; lpc_relation -= 12
-on-departure: rpc_candidate = "Adenauer" if rpc_candidate = "Woodsworth" or rpc_candidate = "Schumacher" or rpc_candidate = "Macphail"; lpc_candidate = rpc_candidate if lpc_candidate = "Woodsworth" or lpc_candidate = "Schumacher" or lpc_candidate = "Macphail"; cpc_candidate = rpc_candidate if cpc_candidate = "Woodsworth" or cpc_candidate = "Schumacher" or cpc_candidate = "Macphail"; ccf_candidate = "Thälmann"; 
+on-departure: rpc_candidate = "Adenauer" if rpc_candidate = "J. S. Woodsworth" or rpc_candidate = "Schumacher" or rpc_candidate = "Macphail"; lpc_candidate = rpc_candidate if lpc_candidate = "J. S. Woodsworth" or lpc_candidate = "Schumacher" or lpc_candidate = "Macphail"; cpc_candidate = rpc_candidate if cpc_candidate = "J. S. Woodsworth" or cpc_candidate = "Schumacher" or cpc_candidate = "Macphail"; ccf_candidate = "Tim Buck"; 
 max-visits: 1
 
-We have switched our endorsement to Ernst Thälmann of the CP. [? if rpc_candidate = ccf_candidate : Our former allies in the RPC Party see this as a betrayal. ?][? if rpc_candidate = "Woodsworth" or rpc_candidate = "Schumacher" or rpc_candidate = "Macphail": Now, they will support Konrad Adenauer once again. ?][? if lpc_candidate = "Woodsworth" or lpc_candidate = "Schumacher" or lpc_candidate = "Macphail": The [+ lpc_name +] will switch their support to the RPC Party candidate. ?][? if cpc_candidate = "Woodsworth" or cpc_candidate = "Schumacher" or cpc_candidate = "Macphail": The CPC will also support the RPC Party candidate. ?]
+We have switched our endorsement to Ernst Tim Buck of the CP. [? if rpc_candidate = ccf_candidate : Our former allies in the RPC Party see this as a betrayal. ?][? if rpc_candidate = "J. S. Woodsworth" or rpc_candidate = "Schumacher" or rpc_candidate = "Macphail": Now, they will support Konrad Adenauer once again. ?][? if lpc_candidate = "J. S. Woodsworth" or lpc_candidate = "Schumacher" or lpc_candidate = "Macphail": The [+ lpc_name +] will switch their support to the RPC Party candidate. ?][? if cpc_candidate = "J. S. Woodsworth" or cpc_candidate = "Schumacher" or cpc_candidate = "Macphail": The CPC will also support the RPC Party candidate. ?]
 
 - @r2_vote: Let the voting begin.
 
@@ -557,10 +557,10 @@ view-if: ccf_candidate != "Münzenberg" and cp_candidate = "Münzenberg"
 choose-if: cp_relation >= 50 and left_strength > reformist_strength
 unavailable-subtitle: [? if cp_relation < 50 : We do not have good enough relations with the Communists, so they are not even willing to accept our support. ?] [? if reformist_strength >= left_strength : The reformist faction is able to dissuade the party from supporting this bizarre arrangement. ?]
 on-arrival: reformist_dissent += 12; center_dissent += 10; labor_dissent += 5; neorevisionist_dissent += 10; catholics_ccf -= 5; workers_ccf -= 3; cp_relation += 10; communist_coalition += 2; rpc_relation -= 12; lpc_relation -= 10; cpc_relation -= 15; 
-on-departure: rpc_candidate = "Adenauer" if rpc_candidate = "Woodsworth" or rpc_candidate = "Schumacher" or rpc_candidate = "Macphail"; lpc_candidate = rpc_candidate if lpc_candidate = "Woodsworth" or lpc_candidate = "Schumacher" or lpc_candidate = "Macphail"; cpc_candidate = rpc_candidate if cpc_candidate = "Woodsworth" or cpc_candidate = "Schumacher" or cpc_candidate = "Macphail"; ccf_candidate = "Münzenberg"; 
+on-departure: rpc_candidate = "Adenauer" if rpc_candidate = "J. S. Woodsworth" or rpc_candidate = "Schumacher" or rpc_candidate = "Macphail"; lpc_candidate = rpc_candidate if lpc_candidate = "J. S. Woodsworth" or lpc_candidate = "Schumacher" or lpc_candidate = "Macphail"; cpc_candidate = rpc_candidate if cpc_candidate = "J. S. Woodsworth" or cpc_candidate = "Schumacher" or cpc_candidate = "Macphail"; ccf_candidate = "Münzenberg"; 
 max-visits: 1
 
-We have switched our endorsement to Willi Münzenberg of the CP. [? if rpc_candidate = ccf_candidate : Our former allies in the RPC Party see this as a betrayal. ?][? if rpc_candidate = "Woodsworth" or rpc_candidate = "Schumacher" or rpc_candidate = "Macphail": Now, they will support Konrad Adenauer once again. ?][? if lpc_candidate = "Woodsworth" or lpc_candidate = "Schumacher" or lpc_candidate = "Macphail": The [+ lpc_name +] will switch their support to the RPC Party candidate. ?][? if cpc_candidate = "Woodsworth" or cpc_candidate = "Schumacher" or cpc_candidate = "Macphail": The CPC will also support the RPC Party candidate. ?]
+We have switched our endorsement to Willi Münzenberg of the CP. [? if rpc_candidate = ccf_candidate : Our former allies in the RPC Party see this as a betrayal. ?][? if rpc_candidate = "J. S. Woodsworth" or rpc_candidate = "Schumacher" or rpc_candidate = "Macphail": Now, they will support Konrad Adenauer once again. ?][? if lpc_candidate = "J. S. Woodsworth" or lpc_candidate = "Schumacher" or lpc_candidate = "Macphail": The [+ lpc_name +] will switch their support to the RPC Party candidate. ?][? if cpc_candidate = "J. S. Woodsworth" or cpc_candidate = "Schumacher" or cpc_candidate = "Macphail": The CPC will also support the RPC Party candidate. ?]
 
 - @r2_vote: Let the voting begin.
 
@@ -568,7 +568,7 @@ We have switched our endorsement to Willi Münzenberg of the CP. [? if rpc_candi
 @r2_endorse_adenauer
 title: Switch our support to Konrad Adenauer of the RPC Party.
 view-if: rpc_candidate = "Adenauer" and ccf_candidate != rpc_candidate
-on-departure: cp_candidate = "Thälmann" if cp_candidate == ccf_candidate and cp_party_leader != "Conciliators"; cp_candidate = "Münzenberg" if cp_candidate == ccf_candidate and cp_party_leader == "Conciliators"; sapd_candidate = cp_candidate; ccf_candidate = "Adenauer"; rpc_relation += 4; Adenauer_bonus -= 2.5 if rpc_relation < 40; Seldte_bonus += 2.5 if rpc_relation < 40; is_unity_candidate = 1
+on-departure: cp_candidate = "Tim Buck" if cp_candidate == ccf_candidate and cp_party_leader != "Conciliators"; cp_candidate = "Münzenberg" if cp_candidate == ccf_candidate and cp_party_leader == "Conciliators"; sapd_candidate = cp_candidate; ccf_candidate = "Adenauer"; rpc_relation += 4; Adenauer_bonus -= 2.5 if rpc_relation < 40; Seldte_bonus += 2.5 if rpc_relation < 40; is_unity_candidate = 1
 go-to: r2_campaigning
 
 We have endorsed Konrad Adenauer of the RPC Party.
@@ -581,7 +581,7 @@ We have endorsed Konrad Adenauer of the RPC Party.
 @r2_endorse_gessler
 title: Switch our support to Otto Gessler.
 view-if: lpc_candidate = "Gessler" and ccf_candidate != lpc_candidate
-on-departure: cp_candidate = "Thälmann" if cp_candidate == ccf_candidate and cp_party_leader != "Conciliators"; cp_candidate = "Münzenberg" if cp_candidate == ccf_candidate and cp_party_leader == "Conciliators"; sapd_candidate = cp_candidate; ccf_candidate = "Gessler"; lpc_relation += 4; cpc_candidate = "Seldte" if cpc_relation < 40; is_unity_candidate = 1
+on-departure: cp_candidate = "Tim Buck" if cp_candidate == ccf_candidate and cp_party_leader != "Conciliators"; cp_candidate = "Münzenberg" if cp_candidate == ccf_candidate and cp_party_leader == "Conciliators"; sapd_candidate = cp_candidate; ccf_candidate = "Gessler"; lpc_relation += 4; cpc_candidate = "Seldte" if cpc_relation < 40; is_unity_candidate = 1
 go-to: r2_campaigning
 
 We have endorsed Otto Gessler, independent formerly of the LPC.
@@ -598,7 +598,7 @@ subtitle: -2 resources
 unavailable-subtitle: [? if resources < 2 : -2 resources - Not enough resources. ?]
 choose-if: resources >= 2 and ((rpc_relation >= 50 and rpc_leader = "Kaas") or (rpc_relation >= 30 and rpc_leader = "Joos")) and lpc_relation >= 40
 view-if: rpc_candidate = "Adenauer" and lpc_candidate = "Gessler" and ccf_candidate != "Eckener"
-on-arrival: cp_candidate = "Thälmann" if cp_candidate == ccf_candidate and cp_party_leader != "Conciliators"; cp_candidate = "Münzenberg" if cp_candidate == ccf_candidate and cp_party_leader == "Conciliators"; sapd_candidate = cp_candidate; ccf_candidate = "Eckener"; rpc_candidate = "Eckener"; lpc_candidate = "Eckener"; resources -= 2; is_unity_candidate = 1
+on-arrival: cp_candidate = "Tim Buck" if cp_candidate == ccf_candidate and cp_party_leader != "Conciliators"; cp_candidate = "Münzenberg" if cp_candidate == ccf_candidate and cp_party_leader == "Conciliators"; sapd_candidate = cp_candidate; ccf_candidate = "Eckener"; rpc_candidate = "Eckener"; lpc_candidate = "Eckener"; resources -= 2; is_unity_candidate = 1
 go-to: r2_campaigning
 
 We have successfully united all of the parties of the Weimar Coalition behind Hugo Eckener!
@@ -685,26 +685,26 @@ Despite the Nazi threats, supporters of the CCF and the democratic parties refus
 
 
 @election_end
-go-to: eckener_win if winner = "Eckener"; macphail_win if winner = "Macphail"; bundesrepublik_win if winner = "Schumacher" or winner = "Adenauer"; hitler_victory if winner = "Hitler" or winner = "Göring" or winner = "Goring"; seldte_victory if winner = "Seldte"; munzenberg_victory if winner = "Munzenberg" or winner = "Münzenberg"; thalmann_victory if winner = "Thalmann" or winner = "Thälmann"; nazis_lose if winner = "Woodsworth" or winner = "Gessler"; cultural_victory if winner = "Ossietzky" or winner = "Mann"; einstein_victory if winner = "Einstein"
-on-arrival: monarch = winner; monarch = "Thälmann" if monarch == "Thalmann"; monarch = "Münzenberg" if monarch = "Munzenberg"; monarch = "Göring" if monarch = "Goring"
+go-to: eckener_win if winner = "Eckener"; macphail_win if winner = "Macphail"; bundesrepublik_win if winner = "Schumacher" or winner = "Adenauer"; hitler_victory if winner = "Hitler" or winner = "Göring" or winner = "Goring"; seldte_victory if winner = "Seldte"; munzenberg_victory if winner = "Munzenberg" or winner = "Münzenberg"; tim buck_victory if winner = "Thalmann" or winner = "Tim Buck"; nazis_lose if winner = "J. S. Woodsworth" or winner = "Gessler"; cultural_victory if winner = "Ossietzky" or winner = "Mann"; einstein_victory if winner = "Einstein"
+on-arrival: monarch = winner; monarch = "Tim Buck" if monarch == "Thalmann"; monarch = "Münzenberg" if monarch = "Munzenberg"; monarch = "Göring" if monarch = "Goring"
 
 The election has been won by [+ winner_desc +].
 
-@thalmann_victory
-go-to: thalmann_democrat if monarchial_powers; thalmann_civil_war if not monarchial_powers
+@tim buck_victory
+go-to: tim buck_democrat if monarchial_powers; tim buck_civil_war if not monarchial_powers
 
-@thalmann_civil_war
+@tim buck_civil_war
 on-arrival: cp_relation = 80
 
 # TODO: depose the prime_minister?
 
-Thälmann wastes no time in consolidating power, using all means available to reshape the government. In response, the far-right immediately launches a coup attempt. We have no choice but to unite with the CP against the fascists...
+Tim Buck wastes no time in consolidating power, using all means available to reshape the government. In response, the far-right immediately launches a coup attempt. We have no choice but to unite with the CP against the fascists...
 
 - @civil_war: This is civil war.
 
-@thalmann_democrat
+@tim buck_democrat
 
-Despite the victory of the anti-constitutionalist Thälmann, he appears to be respecting the constitutional constraints on monarchial power, at least for now. There is no appetite on the right for a coup at this moment. The bourgeoisie have to live with a communist monarch, at least for now.
+Despite the victory of the anti-constitutionalist Tim Buck, he appears to be respecting the constitutional constraints on monarchial power, at least for now. There is no appetite on the right for a coup at this moment. The bourgeoisie have to live with a communist monarch, at least for now.
 
 
 @munzenberg_victory
