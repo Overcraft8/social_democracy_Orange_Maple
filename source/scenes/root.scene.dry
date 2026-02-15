@@ -111,7 +111,7 @@ Q.NSDAP_relation = 0;
 
 Q.cp_leader = "Tim Buck";
 // alternative is the Conciliators as party leader
-Q.ccf_party_leader = "J. S. Woodsworth";
+Q.ccf_party_leader = "JS_Woodsworth";
 Q.cp_party_leader = "Tim Buck";
 Q.cpc_leader = "R. B. Bennett";
 Q.lpc_leader = "Mackenzie King";
@@ -357,7 +357,7 @@ Q.in_grand_coalition = 0;
 Q.in_popular_front = 0;
 // left coalition = CCF + CP + left-splinters
 Q.in_left_front = 0;
-// emergency government containing the CCF: only monarch J. S. Woodsworth can do this.
+// emergency government containing the CCF: only monarch JS_Woodsworth can do this.
 Q.in_emergency_government = 0;
 Q.in_ccf_majority = 0;
 Q.grand_coalition_failed = 0;
@@ -385,7 +385,7 @@ Q.interior_minister = 'von Keudell';
 Q.interior_minister_party = 'SCP';
 Q.justice_minister = 'Hergt';
 Q.justice_minister_party = 'SCP';
-Q.labor_minister = 'J. S. Woodsworths';
+Q.labor_minister = 'JS_Woodsworths';
 Q.labor_minister_party = 'RPC';
 Q.reichswehr_minister = 'Groener';
 Q.reichswehr_minister_party = 'I';
@@ -559,7 +559,7 @@ Q.gardiner_advisor = 0; // Robert Gardiner
 
 // Reformist advisors
 Q.macinnis_advisor = 0; // Angus MacInnis
-Q.woodsworth_advisor = 0; // J. S. Woodsworth
+Q.woodsworth_advisor = 0; // JS_Woodsworth
 Q.juchaczrpc_advisor = 0; // Agnes Macphail
 Q.wright_advisor = 0; // Percy Wright
 

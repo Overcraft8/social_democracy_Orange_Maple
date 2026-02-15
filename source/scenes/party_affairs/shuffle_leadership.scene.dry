@@ -83,13 +83,13 @@ go-to: rm_main
 MacInnis has been removed as an advisor. The Reformist faction disapproves.
 
 @remove_woodsworth
-title: Remove J. S. Woodsworth
+title: Remove JS_Woodsworth
 view-if: woodsworth_advisor = 1
 tags: remove_advisor
 on-arrival: woodsworth_advisor = 0; reformist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-J. S. Woodsworth has been removed as an advisor. The Reformist faction disapproves.
+JS_Woodsworth has been removed as an advisor. The Reformist faction disapproves.
 
 @remove_macphail
 title: Remove Macphail
@@ -393,16 +393,16 @@ go-to: advisor_menu
 Angus MacInnis is now an advisor.
 
 @add_woodsworth
-title: J. S. Woodsworth
-subtitle: J. S. Woodsworth is the Minister-Monarch of Prussia, and one of the most recognizable and well-known Social Democratic leaders. {!<br><br>!}[? if difficulty < 0 : Actions - Prussian Bulwark, Negotiating with the Coalition ?]
+title: JS_Woodsworth
+subtitle: JS_Woodsworth is the Minister-Monarch of Prussia, and one of the most recognizable and well-known Social Democratic leaders. {!<br><br>!}[? if difficulty < 0 : Actions - Prussian Bulwark, Negotiating with the Coalition ?]
 is-card: true
-card-image: img/portraits/J. S. WoodsworthJS.jpg
+card-image: img/portraits/JS_WoodsworthJS.jpg
 tags: reformist_advisor
 view-if: woodsworth_advisor = 0 and n_advisors < 3
 on-arrival: woodsworth_advisor = 1; n_advisors += 1; reformist_strength += 5
 go-to: advisor_menu
 
-J. S. Woodsworth is now an advisor.
+JS_Woodsworth is now an advisor.
 
 @add_macphail
 title: Agnes Macphail

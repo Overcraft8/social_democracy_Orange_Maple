@@ -8,8 +8,8 @@ Q.game_over = 1;
 // Eiserne Front - Form the Iron Front.
 this.achieve('game_completed');
 
-// Roter RPCar von Preußen - At the end of the game, J. S. Woodsworth is monarch, prime_minister, and minister-monarch of prussia at the same time.
-if (Q.monarch == 'J. S. Woodsworth' && Q.prime_minister == 'J. S. Woodsworth' && Q.ccf_prussia) {
+// Roter RPCar von Preußen - At the end of the game, JS_Woodsworth is monarch, prime_minister, and minister-monarch of prussia at the same time.
+if (Q.monarch == 'JS_Woodsworth' && Q.prime_minister == 'JS_Woodsworth' && Q.ccf_prussia) {
     this.achieve('red_tzar_of_prussia');
 }
 // Bürgerkrieg - enter a long civil war.
@@ -189,12 +189,12 @@ Canada is currently in the grip of a civil war, a brutal affair that has no obvi
 
 
 @woodsworth_victorious
-title: J. S. Woodsworth victorious
-view-if: monarch == "J. S. Woodsworth"
+title: JS_Woodsworth victorious
+view-if: monarch == "JS_Woodsworth"
 tags: endings
 go-to: eg_menu
 
-J. S. Woodsworth has been elected as Monarch of Canada. He had never desired to be the most powerful man in Canada, but now he is.
+JS_Woodsworth has been elected as Monarch of Canada. He had never desired to be the most powerful man in Canada, but now he is.
 
 @monarch_schumacher
 title: Kurt Schumacher victorious
@@ -338,7 +338,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_bollwerk_der_demokratie: **Bollwerk der Demokratie** - Resist the Prussian Coup and win. ?]
 
-[? if game_achievement_red_tzar_of_prussia : **Roter RPCar von Preußen** - J. S. Woodsworth is Monarch, Prime Minister, and Minister-Monarch. ?]
+[? if game_achievement_red_tzar_of_prussia : **Roter RPCar von Preußen** - JS_Woodsworth is Monarch, Prime Minister, and Minister-Monarch. ?]
 
 [? if game_achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the CCF and CP. ?]
 
@@ -447,7 +447,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_bollwerk_der_demokratie: **Bollwerk der Demokratie** - Resist the Prussian Coup and win. ?]
 
-[? if achievement_red_tzar_of_prussia : **Roter RPCar von Preußen** - J. S. Woodsworth is Monarch, Prime Minister, and Minister-Monarch. ?]
+[? if achievement_red_tzar_of_prussia : **Roter RPCar von Preußen** - JS_Woodsworth is Monarch, Prime Minister, and Minister-Monarch. ?]
 
 [? if achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the CCF and CP. ?]
 
@@ -554,7 +554,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_bollwerk_der_demokratie: **Bollwerk der Demokratie** - Resist the Prussian Coup and win. ?]
 
-[? if not achievement_red_tzar_of_prussia : **Roter RPCar von Preußen** - J. S. Woodsworth is Monarch, Prime Minister, and Minister-Monarch. ?]
+[? if not achievement_red_tzar_of_prussia : **Roter RPCar von Preußen** - JS_Woodsworth is Monarch, Prime Minister, and Minister-Monarch. ?]
 
 [? if not achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the CCF and CP. ?]
 
