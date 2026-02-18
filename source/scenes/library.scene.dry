@@ -65,7 +65,7 @@ Monarch: [+ monarch +]
 
 Prime Minister: [+ prime_minister +] ([+ prime_minister_party +])
 
-Reichstag composition:
+Commons composition:
 
 # 1928: 30, 1930: 25, 1932: 22
 CCF: [+ ccf_r +]%
@@ -157,7 +157,6 @@ go-to: menu
 
 **Projected election results** (if the election were to be held now):
 
-# 1928: 30, 1930: 25, 1932: 22
 CCF: [+ ccf_votes +]%
 
 [? if sapd_formed: SAPD: [+ sapd_votes +]% ?]
@@ -176,9 +175,6 @@ CPC: [+ cpc_votes +]%
 
 # 1928: 14, 1930: 7
 SCP: [+ scp_votes +]%
-
-# 1928: 3, 1930: 18
-NSDAP: [+ nsdap_votes +]%
 
 # 1928: 9, 1930: 10
 Others: [+ other_votes +]%
@@ -331,7 +327,7 @@ Dissent: [+ neorevisionist_dissent : dissent +]
 @figures
 title: Figures and Charts
 go-to: menu
-on-arrival: rpc_r = rpc_r - 3;
+on-arrival: rpc_r = rpc_r;
 on-display: {!
 data = [
     {
@@ -365,7 +361,7 @@ data = data.concat([
         "id": "rpc",
         "legend": "RPC",
         "name": "RPC",
-        "seats": (Q.rpc_r - 3)*5,
+        "seats": Q.rpc_r*5,
     },
     {
         "id": "cpc",
@@ -400,13 +396,13 @@ if (d3 && window) {
     if (screenWidth < width - 50) {
         width = screenWidth - 50;
         height = width;
-        document.getElementById("reichstag").style.height = screenWidth/2 + "px";
+        document.getElementById("commons").style.height = screenWidth/2 + "px";
     }
     var parliament = d3.parliament();
     parliament.width(width).height(height).innerRadiusCoef(0.4);
     parliament.enter.fromRPC(true).smallToBig(true);
     parliament.exit.toRPC(false).bigToSmall(true);
-    d3.select("#reichstag").datum(data).call(parliament);
+    d3.select("#commons").datum(data).call(parliament);
 
     var lines = d3.linegraph(false, false,
             Q.parties,
@@ -441,16 +437,16 @@ if (d3 && window) {
 }
 !}
 
-= Reichstag composition
+= Commons composition
 
-{!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
+{!<svg id="commons" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!}
 {!<tr><td><div class="box" style='background-color:#D26E28; outline: 2px; outline-style: solid;'> </div></td><td>!} **CCF:** {!</td><td>!} **[+ ccf_r +]%** {!</td></tr>!}
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#C40000'> </div></td> <td> !}SAPD: {!</td><td>!} [+ sapd_r +]% {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#8B0000'> </div></td> <td>!}CP: {!</td><td>!} [+ cp_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#8B0000'> </div></td> <td>!} CP: {!</td><td>!} [+ cp_r +]% {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#BE0028'> </div></td><td>!} [+ lpc_name +]: {!</td><td>!} [+ lpc_r +]% {!</td></tr>!}
 
@@ -462,9 +458,6 @@ if (d3 && window) {
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div></td><td>!} Other parties: {!</td><td>!} [+ other_r +] % {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#50E23D'> </div></td><td>!} SCP: {!</td><td>!} [+ scp_r +]% {!</td></tr>!}
-
-{!<tr><td><div class="box" style='background-color:#954B00'> </div></td><td>!} NSDAP: {!</td><td>!} [+ nsdap_r +]% {!</td></tr>!}
-{!</table>!}
 
 = Election history
 

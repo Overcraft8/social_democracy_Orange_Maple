@@ -31,7 +31,7 @@ Q.difficulty = 0;
 Q.historical_mode = 0;
 // old demographics
 Q.old_demographics = 0;
-// use decimals for reichstag seats
+// use decimals for commons seats
 // TODO: not yet implemented
 Q.use_decimals = 0;
 
@@ -178,7 +178,7 @@ Q.pro_republic = 59;
 
 Q.emergency_rule = 0;
 
-// minimum percentage of votes to be represented in the Reichstag
+// minimum percentage of votes to be represented in the Commons
 Q.electoral_threshold = 0;
 // constitutional reform level
 Q.constitutional_reform = 0;
@@ -197,6 +197,35 @@ Q.coup_progress = 0;
 Q.capital_strike_progress = 0;
 
 Q.budget = 4;
+
+
+//District data
+//All seat numbers for each district are based of the 1984
+//Displayed one
+Q.district_name = "Name Of";
+
+Q.district_worker = 0;
+Q.district_old_middle = 0;
+Q.district_new_middle = 0;
+Q.district_rural = 0;
+Q.district_catholic = 0;
+
+
+Q.district_control = 10;
+Q.district_infastructure = 0;
+Q.district_seats = 0;
+Q.district_industries = ['Major industries'];
+
+//mannar
+
+Q.mannar_d_old_middle = 20;
+Q.mannar_d_new_middle = 20;
+Q.mannar_d_worker = 20;
+Q.mannar_d_rural = 20;
+Q.mannar_d_catholic = 20
+
+Q.mannar_d_seats = 5;
+Q.mannar_d_pop_weight = 0.72;
 
 // Proportion of different social groups
 // source: https://surface.syr.edu/cgi/viewcontent.cgi?filename=3&article=1016&context=books&type=additional page 45, table 3.4 - using 1925 figures
@@ -294,10 +323,9 @@ Q.catholics_nsdap = 0;
 Q.catholics_other = 6;
 
 
-// Current Reichstag composition
-// % of Reichstag in Jan 1928
+// Current Commons composition
+// % of Commons in Jan 1928
 // source: wikipedia
-// note: the RPC figures also include the BVP (Bavarian people's party)
 // since they were ideologically similar, but they were separate parties.
 // They did not have a CDU/CSU-style relationship.
 Q.ccf_r = 0;
@@ -508,8 +536,8 @@ Q.n_elections = 0;
 Q.no_majority_elections = 0;
 // elections are not on a timer, but rather there is an indicator for whether you're in an electoral cycle.
 Q.in_election = 1;
-Q.next_election_year = 1928;
-Q.next_election_month = 5;
+Q.next_parl_election_year = 1928;
+Q.next_parl_election_month = 5;
 Q.next_election_time = 5;
 // government affairs timers
 Q.agricultural_policy_timer = 0;
@@ -633,5 +661,5 @@ go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
 It is a dire time for the Dominion of Canada. The Great Depression has begun, and the government of R.B. Bennett is proving itself incapable of dealing with the crisis. The Liberal Party of Mackenzie King is promising reform, but their commitment to capitalism and the status quo is clear. 
 
-The Cooperative Commonwealth Federation (CCF) is the only party offering a real alternative to the old order. However, they are a young and inexperienced party, and they face opposition not only from the right-wing parties but also from within their own ranks, torn between the Agrarian vision of George Williams and the Labour oriented J. S. Woodsworth and M. J. Coldwell. The CCF's success in the upcoming election will depend on their ability to navigate these challenges and present a compelling vision for the future of Canada.
+The Cooperative Commonwealth Federation (CCF) is the only party offering a real alternative to the old order. However, we are a young and inexperienced party, and we face opposition not only from the right-wing parties but also from within our own ranks, torn between the Agrarian vision of George Williams and the Labour oriented J. S. Woodsworth and M. J. Coldwell. The CCF's success in the upcoming election will depend on your ability to navigate these challenges and present a compelling vision for the future of Canada.
 

@@ -290,6 +290,21 @@ function applyWholesome(str) {
 
 }());
 
+// Western Province
+function Colombo_info() {
+  var Q = window.dendryUI.dendryEngine.state.qualities;
+  Q.district_name = "Colombo";
+  Q.district_worker = Q.colombo_d_worker;
+  Q.district_old_middle = Q.colombo_d_old_middle;
+  Q.district_new_middle = Q.colombo_d_new_middle;
+  Q.district_upper = Q.colombo_d_upper;
+  Q.district_rural = Q.colombo_d_rural;
+  Q.district_catholic = Q.colombo_d_catholic;
+  Q.district_seats = Q.colombo_d_seats;
+  Q.district_industries = Q.colombo_d_industries;  
+  window.updateSidebarRight(); 
+}
+
 document.addEventListener('mousemove', e => {
     document.querySelectorAll('.mytooltiptext').forEach(el => {
         el.style.setProperty('--mouse-x', e.clientX + 'px');
